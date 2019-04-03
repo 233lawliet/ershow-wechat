@@ -1,0 +1,72 @@
+<view class='content'>
+  <view class='item1' bindtap='changeTouxaingFunction'>
+    <view class='item1-left'>
+      <text>头像</text>
+    </view>
+    <view class='item1-mid'>
+      <view class='img' hidden='{{touxiangHidden}}'>
+        <image src='{{touxiang}}'></image>
+      </view>
+    </view>
+    <view class='item1-right'>
+      <view class='dayuhao'>
+        <image src='/images/icons/getdetail.png'></image>
+      </view>
+    </view>
+  </view>
+  
+
+  <view class='item'>
+     <view class='item-left'>
+      <text>账号</text>
+    </view>
+    <view class='item-mid'>
+      <text>{{zhanghao}}</text>
+    </view>
+    <view class='item-right'>
+    </view>
+  </view>
+
+  <view class='item' bindtap='changeNichengFunction'>
+     <view class='item-left'>
+      <text>昵称</text>
+    </view>
+    <view class='item-mid'>
+      <text>{{nicheng}}</text>
+    </view>
+    <view class='item-right'>
+      <view class='dayuhao'>
+        <image src='/images/icons/getdetail.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='item' bindtap='changeQianmingFunction'>
+     <view class='item-left'>
+      <text>签名</text>
+    </view>
+    <view class='item-mid qianming'>
+      <text>{{qianming}}</text>
+    </view>
+    <view class='item-right'>
+      <view class='dayuhao'>
+        <image src='/images/icons/getdetail.png'></image>
+      </view>
+    </view>
+  </view>
+
+
+  <view class='item item2' bindtap='changeMoreFunction'>
+     <view class='item-left'>
+      <text>更多</text>
+    </view>
+    <view class='item-mid'>
+      <text></text>
+    </view>
+    <view class='item-right'>
+      <view class='dayuhao'>
+        <image src='/images/icons/getdetail.png'></image>
+      </view>
+    </view>
+  </view>
+
+  </view>

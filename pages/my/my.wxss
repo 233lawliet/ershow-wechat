@@ -1,0 +1,166 @@
+.content{
+  height: 800rpx;
+  width: 750rpx;
+  background-color: #fff;
+}
+.top{
+  width: 750rpx;
+  height: 250rpx;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+}
+.left{
+  width: 200rpx;
+  height: 250rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.img{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 20rpx;
+}
+.img image{
+  width: 100%;
+  height: 100%;
+}
+.mid{
+  width: 400rpx;
+  height: 250rpx;
+}
+.name{
+  width: 100%;
+  height: 100rpx;
+  padding-top: 30rpx;
+  padding-left: 20rpx;
+  font-size: 140%;
+  font-weight: bold;
+  
+}
+
+.qianming{
+  width: 90%;
+  height: 100rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  font-size: 100%;
+
+}
+.right{
+  width: 150rpx;
+  height: 150rpx;
+  padding-top: 100rpx;
+}
+.xiangxi{
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  padding-left: 60rpx;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+}
+.xiangxi image{
+  width: 100%;
+  height: 100%;
+}
+
+.bottom{
+  width: 100%;
+  height: 650rpx;
+}
+
+
+.item1{
+  width: 730rpx;
+  height: 120rpx;
+  padding-left: 20rpx;
+  border-top: 25rpx solid #ddd;
+  border-bottom: 25rpx solid #ddd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 120%;
+  
+}
+.item{
+  width: 730rpx;
+  height: 100rpx;
+  padding-left: 20rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 120%;
+  border-bottom: 2rpx solid #ddd;
+  
+}
+.item-left{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 15rpx;
+  
+}
+.item-left image{
+  width: 80%;
+  height: 80%;
+  
+}
+.item-mid{
+  width: 480rpx;
+  padding-left: 40rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 90%;
+}
+.item-right{
+  width: 60rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.item-right image{
+  width: 60%;
+  height: 60%;
+}
+
+.item1-mid{
+  width: 480rpx;
+  padding-left: 40rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 90%;
+  
+}
+.item1-right{
+  width: 60rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ 
+}
+.item1-right image{
+  width: 60%;
+  height: 60%;
+}
+.bottom-bottom{
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+}

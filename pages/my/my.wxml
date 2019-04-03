@@ -1,0 +1,80 @@
+<view class='content'>
+  <view class='top' bindtap='changeInfoFunction'>
+    <view class='left'>
+      <view class='img'>
+        <image src='/images/imgs/lawliet.jpg '></image>
+      </view>
+    </view>
+    <view class='mid'>
+      <view class='name'>
+        <text>路通</text>
+      </view>
+      <view class='qianming'>
+        <text>最后的时光撒打发时间发i风飒飒撒打</text>
+      </view>
+    </view>
+    <view class='right'>
+     <view class='xiangxi'>
+     <!-- <image src='/images/icons/getdetail.png'></image>-->
+     </view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='item1'>
+      <view class='item-left'>
+        <image src='/images/icons/paimai.png'></image>
+      </view>
+      <view class='item1-mid'>
+        <text>正在拍卖</text> 
+      </view>
+      <view class='item1-right'>
+        <image src='/images/icons/getdetail.png'></image>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='item-left'>
+        <image src='/images/icons/guanzhu.png'></image>
+      </view>
+      <view class='item-mid'>
+        <text>我的关注</text> 
+      </view>
+      <view class='item-right'>
+        <image src='/images/icons/getdetail.png'></image>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='item-left'>
+        <image src='/images/icons/dingdan.png'></image>
+      </view>
+      <view class='item-mid'>
+        <text>我的订单</text> 
+      </view>
+      <view class='item-right'>
+        <image src='/images/icons/getdetail.png'></image>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='item-left'>
+        <image src='/images/icons/pingjia.png'></image>
+      </view>
+      <view class='item-mid'>
+        <text>我的评价</text> 
+      </view>
+      <view class='item-right'>
+        <image src='/images/icons/getdetail.png'></image>
+      </view>
+    </view>
+    <view class='item1'>
+      <view class='item-left'>
+        <image src='/images/icons/question.png'></image>
+      </view>
+      <view class='item1-mid'>
+        <text>常见问题</text> 
+      </view>
+      <view class='item1-right'>
+        <image src='/images/icons/getdetail.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='bottom-bottom'></view>
+</view>

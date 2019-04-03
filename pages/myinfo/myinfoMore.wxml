@@ -1,0 +1,172 @@
+<view class="content">
+  <scroll-view class='items' scroll-y>
+    <block>
+
+      <view class='item'>
+        <view class='item-head' bindtap="getMoreFunction1">
+          <view class='item-head-left'>
+            <text>账户信息</text>
+          </view>
+          <view class='item-head-mid'>
+            <text></text>
+          </view>
+          <view class='item-head-right'>
+            <view class='xiangxia'>
+              <image src='/images/icons/xiangxia.png'></image>
+            </view>
+          </view>
+        </view>
+        <view class='item-foot' style='display:{{display1}}'>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>学号</text>
+            </view>
+            <view class='item-right'>
+              <input class='studentId' type='text'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>密码</text>
+            </view>
+            <view class='item-right'>
+              <input class='password' type='text'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>手机</text>
+            </view>
+            <view class='item-right'>
+              <input class='phone' type='text'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>邮箱</text>
+            </view>
+            <view class='item-right'>
+              <input class='email' type='text'></input>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='item-head' bindtap="getMoreFunction2">
+          <view class='item-head-left'>
+            <text>个人信息</text>
+          </view>
+          <view class='item-head-mid'>
+            <text></text>
+          </view>
+          <view class='item-head-right'>
+            <view class='xiangxia'>
+              <image src='/images/icons/xiangxia.png'></image>
+            </view>
+          </view>
+        </view>
+        <view class='item-foot' style='display:{{display2}}'>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>姓名</text>
+            </view>
+            <view class='item-right'>
+              <input class='' type='text'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>性别</text>
+            </view>
+            <view class='item-right'>
+              <input class='gender' type='text'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>生日</text>
+            </view>
+            <view class='item-right'>
+              <input class='birthday' type='text'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>住址</text>
+            </view>
+            <view class='item-right'>
+              <input class='address' type='text'></input>
+            </view>
+          </view>
+
+        </view>
+      </view>
+      <view class='item'>
+        <view class='item-head' bindtap="getMoreFunction3">
+          <view class='item-head-left'>
+            <text>学校信息</text>
+          </view>
+          <view class='item-head-mid'>
+            <text></text>
+          </view>
+          <view class='item-head-right'>
+            <view class='xiangxia'>
+              <image src='/images/icons/xiangxia.png'></image>
+            </view>
+          </view>
+        </view>
+        <view class='item-foot' style='display:{{display3}}'>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>学校</text>
+            </view>
+            <view class='item-right'>
+              <input class='school' type='text'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>学院</text>
+            </view>
+            <view class='item-right'>
+              <input class='major' type='text'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>专业</text>
+            </view>
+            <view class='item-right'>
+              <input class='univercity' type='text'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>班级</text>
+            </view>
+            <view class='item-right'>
+              <input class='class' type='text'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>宿舍</text>
+            </view>
+            <view class='item-right'>
+              <input class='hostel' type='text'></input>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class='bottom'>
+    <view class="bottom-left" >
+      <button catchtap='cancelFunction'>取消</button>
+    </view>
+    <view class="bottom-right" >
+      <button catchtap='changeFunction'>修改</button>
+    </view>
+  </view>
+</view>

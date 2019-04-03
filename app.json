@@ -1,0 +1,52 @@
+{
+  "pages":[
+
+
+    "pages/list/list",
+    "pages/type/type",
+    "pages/cart/cart",
+    "pages/my/my",
+    "pages/myinfo/myinfo",
+    "pages/myinfo/myinfoMore",
+    "pages/myinfo/myinfoNicheng",
+    "pages/myinfo/myinfoQianming",
+   
+    
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/list/list",
+        "text": "列表",
+        "iconPath": "/images/icons/list.png",
+        "selectedIconPath": "/images/icons/listSelect.png"
+      },
+      {
+        "pagePath": "pages/type/type",
+        "text": "分类",
+        "iconPath": "/images/icons/type.png",
+        "selectedIconPath": "/images/icons/typeSelect.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "/images/icons/cart.png",
+        "selectedIconPath": "/images/icons/cartSelect.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的信息",
+        "iconPath": "/images/icons/mine.png",
+        "selectedIconPath": "/images/icons/mineSelect.png"
+      }
+    ]
+  }
+}

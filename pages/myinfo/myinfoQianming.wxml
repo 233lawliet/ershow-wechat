@@ -1,0 +1,14 @@
+<view class="content">
+  <view class='top'>
+    <input type='text' value="{{qianming}}" bindinput='bindKeyInput' auto-focus="{{focus}}"></input>
+  </view>
+  <view class='mid'></view>
+  <view class='bottom'>
+    <view class='bottom-left'>
+      <button type='warn' catchtap='cancelFunction'>取消</button>
+    </view>
+    <view class='bottom-right'>
+      <button type='primary' catchtap='okFunction'>更改</button>
+    </view>
+  </view>
+</view>
