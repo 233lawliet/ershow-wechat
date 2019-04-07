@@ -1,0 +1,121 @@
+<view class="content">
+  <scroll-view scroll-y class='scroll'>
+    <view class='top'>
+      <view class='img'>
+        <image src='{{item.image1}}'></image>
+      </view>
+      <view class='float'>
+        <view class='clock'>
+          <image src='/images/icons/clock.png'></image>
+        </view>
+        <text>该活动预计于12结束</text>
+      </view>
+    </view>
+    <view class='mid'>
+      <view class='mid-info'>
+        <view class='mid-info-left'>
+          <text>{{item.foodsname}}</text>
+        </view>
+        <view class='mid-info-right'>
+          <text>{{item.foodsinfo}}</text>
+        </view>
+      </view>
+      <view class='mid-price'>
+        <view class='text1'>
+          <text class='text11'>RMB{{'\n'}}</text>
+          <text class='text12'>当前价</text>
+        </view>
+        <view class='price1'>
+          <text>{{item.curPrice}}</text>
+        </view>
+        <view class='yuan1'>
+          <text>(元)</text>
+        </view>
+        <view class='text2'>
+          <text class='text21'>起拍价:{{item.startprice}} (元)</text>
+        </view>
+
+      </view>
+
+      <view class='tran-info'>
+        <view class='tran-info-left'>
+          <text>交易地点:</text>
+        </view>
+        <view class='tran-info-left2'>
+          <text>{{item.place}}</text>
+        </view>
+        <view class='tran-info-right1'>
+          <text>交易方式:</text>
+        </view>
+        <view class='tran-info-right2'>
+          <text>线下交易</text>
+        </view>
+      </view>
+
+
+      <view class='pay-info'>
+        <view class='pay-infos'>
+          <view class='pay-info-top'>
+            <text>支付方式：</text>
+          </view>
+          <view class='pay-info-bottom'>
+            <text>由于交易范围是校园内，关闭了物流发送和线上交易功能。{{'\n'}}仅支持线下交易.</text>
+          </view>
+        </view>
+      </view>
+
+      <view class='seller-info'>
+        <view class='seller-info-left-left'>
+          <text>店家{{'\n'}}信息</text>
+        </view>
+        <view class='seller-info-left'>
+          <image src='{{user.photo}}'></image>
+        </view>
+        <view class='seller-info-right'>
+          <view class='seller-info-right-top'>
+            <view class='seller-info-right-top-name'>
+              <text>{{user.nickname}}</text>
+            </view>
+            <view class='seller-info-right-top-other'>
+              <text>{{user.school}} -</text>
+              <text>{{' '+user.stage}}</text>
+            </view>
+          </view>
+          <view class='seller-info-right-bottom'>
+            <text>{{user.autograph}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='mid-other'>
+        <view class='mid-other-left'>围观：{{item.foodsOthers.views}} 次</view>
+        <view class='mid-other-mid'>竞拍：{{item.foodsOthers.pids}} 次</view>
+        <view class='mid-other-right'>竞拍：{{item.foodsOthers.comments}} 次</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='bottom'>
+    <view class='kefu'>
+      <view class='img'>
+        <image src='/images/icons/xiaoxi.png'></image>
+      </view>
+      <view class='name'>
+        <text>客服</text>
+      </view>
+    </view>
+    <view class='shoucang'>
+      <view class='img'>
+        <image src='/images/icons/shoucang.png'></image>
+      </view>
+      <view class='name'>
+        <text>收藏</text>
+
+      </view>
+    </view>
+    <view class='cart' bindtap='addCart'>
+      <text>加入购物车</text>
+    </view>
+    <view class='payNow'>
+      <text>立即支付</text>
+    </view>
+  </view>
+</view>

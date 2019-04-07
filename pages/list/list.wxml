@@ -1,2 +1,56 @@
-<!--pages/list/list.wxml-->
-<text>pages/list/list.wxml</text>
+<view class="content">
+  <view class='top'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='true' class='swiper'>
+      <block wx:for="{{imgUrls}}" wx:key="{{item}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='bottom'>
+    <view wx:for="{{items}}" wx:key="{{item.foodsid}}">
+      <view class='item'>
+        <view class='item-left'>
+          <view class='img'>
+            <image src='{{item.image1}}'></image>
+          </view>
+        </view>
+        <view class='item-mid'>
+          <view class='name'>
+            <text>{{item.foodsname}}</text>
+          </view>
+          <view class='oldPrice'>起拍价:￥ {{item.startprice}}</view>
+          <view class='curPrice'>当前价:￥ {{item.curPrice}}</view>
+        </view>
+        <view class='item-right'>
+          <view class='item-right-top'>
+          </view>
+          <view class='item-right-bottom'>
+            <view class='pids'>
+              <view class='fimg'>
+                <image src='/images/icons/fpids.png'></image>
+              </view>
+               <text>{{item.foodsOthers.pids}}</text>
+            </view>
+            <view class='views'>
+              <view class='fimg'>
+               <image src='/images/icons/fviews.png'></image>
+              </view>
+              <text>{{item.foodsOthers.views}}</text>
+            </view>
+            <view class='comments'>
+              <view class='fimg'>
+               <image src='/images/icons/fcomments.png'></image>
+              </view>
+              <text> {{item.foodsOthers.comments}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

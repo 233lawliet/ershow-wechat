@@ -1,1 +1,165 @@
-/* pages/list/list.wxss */
+.content {
+  width: 100%;
+  height: 100vh;
+  background-color: #eee;
+}
+
+.top {
+  width: 100%;
+  height: 300rpx;
+  padding-bottom: 20rpx;
+}
+
+.top swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.top swiper swiper-item image {
+  width: 100%;
+  height: 100%;
+  border-radius: 18rpx;
+}
+
+.bottom {
+  width: 100%;
+}
+
+.item {
+  width: 100%;
+  height: 220rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 5rpx solid #eee;
+  border-radius: 15rpx;
+}
+
+.item-left {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-left .img {
+  width: 90%;
+  height: 90%;
+}
+
+.item-left .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.item-mid {
+  width: 40%;
+  height: 98%;
+  padding-top: 2%;
+}
+
+.item-right {
+  width: 30%;
+  height: 100%;
+}
+
+.name {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /*排列方向居中*/
+  font-size: 98%;
+  justify-items: center;
+  padding-left: 10rpx;
+  font-weight: bold;
+}
+
+.oldPrice {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /*排列方向居中*/
+  justify-items: center;
+  padding-left: 5rpx;
+  color: #777;
+  font-size: 90%;
+}
+
+.curPrice {
+  width: 100%;
+  height: 32%;
+  padding-bottom: 8%;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /*排列方向居中*/
+  justify-items: center;
+  padding-left: 5rpx;
+  font-size: 95%;
+  color: #f00;
+  font-weight: bolder;
+}
+
+.item-right-top {
+  width: 100%;
+  height: 10%;
+  padding-top: 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-right-bottom {
+  padding-left: 20%;
+  width: 80%;
+  height: 80%;
+  justify-content: center;
+}
+
+.pids {
+  height: 30%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 90%;
+}
+
+.views {
+  height: 30%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 90%;
+}
+.comments {
+  height: 30%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 90%;
+}
+.fimg {
+  width: 40%;
+  padding-right: 10%;
+  height: 100%;
+}
+
+.fimg image {
+  width: 100%;
+  height: 100%;
+}
