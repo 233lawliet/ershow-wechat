@@ -1,0 +1,13 @@
+.items{
+  width: 100%;
+  height: 100vh;
+}
+.item{
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: saddlebrown;
+}

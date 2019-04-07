@@ -1,8 +1,11 @@
 {
   "pages":[
+
+    "pages/pidList/pidList",
     
-    "pages/listDetail/listDetail",
     "pages/list/list",
+    "pages/listDetail/listDetail",
+    "pages/pid/pid",
     "pages/type/type",
     "pages/cart/cart",
     "pages/my/my",

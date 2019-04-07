@@ -1,0 +1,7 @@
+<view class='content'>
+  <view class='items' wx:for='{{pids}}' wx:key='item.pidid'>
+    <view class='item'>
+    <text>{{item.nickname}}</text>
+    </view>
+  </view>
+</view>

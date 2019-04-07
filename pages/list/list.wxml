@@ -11,7 +11,7 @@
 
   <view class='bottom'>
     <view wx:for="{{items}}" wx:key="{{item.foodsid}}">
-      <view class='item'>
+      <view class='item' bindtap='goDetail' data-index='{{index}}'>
         <view class='item-left'>
           <view class='img'>
             <image src='{{item.image1}}'></image>

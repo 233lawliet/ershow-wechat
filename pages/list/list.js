@@ -92,5 +92,30 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  addViews:function(foodsid){
+    wx.request({
+      url: 'http://localhost:8080/addViews',
+      data:{
+        foodsid:foodsid
+      }
+    })
+  },
+  goDetail: function (e) {
+    //捕获点击id
+    let i = e.currentTarget.dataset.index;
+    //准备数据
+    let item = this.data.items[i];
+
+    //数据放入缓存
+    wx.setStorageSync("item", item);
+
+
+    //增加页面访问数
+    this.addViews(item.foodsid);
+    //切换页面
+    wx.navigateTo({
+      url: '/pages/listDetail/listDetail',
+    })
   }
 })

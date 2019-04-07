@@ -14,13 +14,21 @@
 }
 
 
+
 .top{
   width: 100%;
   height: 60%;
 }
-.top .img{
+
+
+.swiper{
   width: 100%;
   height: 88%;
+}
+
+.top .img{
+  width: 100%;
+  height: 100%;
 }
 .top .img image{
   width: 100%;
@@ -69,8 +77,9 @@
   border-top: 10rpx #eee solid;
 }
 .mid-info-left{
-  width: 25%;
-  height: 80%;
+  width: 32%;
+  padding-left: 3%;
+  height: 90%;
   font-size: 100%;
   display: flex;
   flex-direction: row;
@@ -81,11 +90,11 @@
 }
 
 .mid-info-right{
-  width: 65%;
+  width: 60%;
   height: 90%;
   font-size: 82%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 4%;
+  padding-right: 1%;
   display: -webkit-box;  
   align-items: center;
   color: #666;
@@ -385,34 +394,39 @@
 
 .bottom{
   width: 100%;
-  height: 10%;
-  position: fixed;
+  height: 120rpx;
 
-  border-top: 2rpx solid #eee;
+  position: fixed;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;  
+  letter-spacing: 2rpx;
+  
 }
 
 
 .kefu{
-  height: 99%;
-  padding-top: 1%;
+  height: 97%;
+  padding-top: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 20%;
 }
 .kefu .img{
-  height: 50%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  height: 55%;
+  width: 50%;
+  
 }
 
 .kefu .img image{
   height: 100%;
-  width: 50%;
+  width: 100%;
 }
 .kefu .name{
-  height: 50%;
+  height: 40%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -422,24 +436,30 @@
 }
 
 .shoucang{
-  height: 99%;
-  padding-top: 1%;
+  height: 97%;
+  padding-top: 2%;
   width: 20%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .shoucang .img{
-  height: 50%;
-  width: 100%;
+  height: 55%;
+  width: 50%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 .shoucang .img image{
   height: 100%;
-  width: 50%;
+  width: 100%;
 }
 .shoucang .name{
   width: 100%;
-  height: 50%;
+  height: 40%;
   display: flex;
   flex-direction: row;
   align-items: center;  /*竖直方向居中*/
@@ -454,8 +474,11 @@
   flex-direction: row;
   align-items: center;  /*竖直方向居中*/
   justify-content: center;  /*水平方向居中*/
-  background-color:#ee0c0c;
-  font-size: 80%;
+  background-color:rgb(48, 212, 16);
+  font-size: 90%;
+  color: #111;
+  font-weight: bold;
+  letter-spacing: 3rpx;
 }
 .payNow{
   height: 100%;
@@ -464,7 +487,11 @@
   flex-direction: row;
   align-items: center;  /*竖直方向居中*/
   justify-content: center;  /*水平方向居中*/
-  background-color: #a3f30e;
-  font-size: 80%;
+  background-color: rgb(255, 255, 0);
+  
+  font-size: 90%;
+  letter-spacing: 3rpx;
+  color: #f00;
+  font-weight: bold;
 
 }

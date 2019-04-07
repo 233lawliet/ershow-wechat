@@ -1,9 +1,13 @@
 <view class="content">
   <scroll-view scroll-y class='scroll'>
     <view class='top'>
-      <view class='img'>
-        <image src='{{item.image1}}'></image>
-      </view>
+    <swiper class='swiper' indicator-dots="ture" circular="true" >
+    <block wx:for="{{imageList}}" wx:key='{{item}}'> 
+        <swiper-item class="img"> 
+            <image src='{{item}}'></image>
+        </swiper-item> 
+        </block>
+      </swiper>
       <view class='float'>
         <view class='clock'>
           <image src='/images/icons/clock.png'></image>
@@ -99,7 +103,7 @@
         <image src='/images/icons/xiaoxi.png'></image>
       </view>
       <view class='name'>
-        <text>客服</text>
+        <text>评论</text>
       </view>
     </view>
     <view class='shoucang'>
@@ -112,10 +116,10 @@
       </view>
     </view>
     <view class='cart' bindtap='addCart'>
-      <text>加入购物车</text>
+      <text>竞价列表</text>
     </view>
     <view class='payNow'>
-      <text>立即支付</text>
+      <text>我要竞拍</text>
     </view>
   </view>
 </view>

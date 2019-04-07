@@ -7,6 +7,7 @@ Page({
   data: {
     item:{},
     user:{},
+    imageList:[],
   },
 
   /**
@@ -27,11 +28,20 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    this.data.item=wx.getStorageSync("items")[0];
+    this.data.item=wx.getStorageSync("item");
     this.setData({
       item:this.data.item
     });
-    //getUserById
+
+    //商品图片集合+渲染
+    this.data.imageList.push(this.data.item.image1)
+    this.data.imageList.push(this.data.item.image2)
+    this.data.imageList.push(this.data.item.image3)
+    this.setData({
+      imageList:this.data.imageList
+    })
+
+    //getUserById获取用户的信息
     var that = this;
     wx.request({
       url: 'http://localhost:8080/getUserById',
