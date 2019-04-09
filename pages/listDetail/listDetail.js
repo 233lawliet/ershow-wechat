@@ -1,4 +1,6 @@
 // pages/listDetail/listDetail.js
+
+
 Page({
 
   /**
@@ -6,7 +8,7 @@ Page({
    */
   data: {
     item:{},
-    user:{},
+    seller:{},
     imageList:[],
   },
 
@@ -21,7 +23,7 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -34,6 +36,7 @@ Page({
     });
 
     //商品图片集合+渲染
+    this.data.imageList=[];
     this.data.imageList.push(this.data.item.image1)
     this.data.imageList.push(this.data.item.image2)
     this.data.imageList.push(this.data.item.image3)
@@ -41,7 +44,7 @@ Page({
       imageList:this.data.imageList
     })
 
-    //getUserById获取用户的信息
+    //getUserById获取用户(店家)的信息
     var that = this;
     wx.request({
       url: 'http://localhost:8080/getUserById',
@@ -52,9 +55,9 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        that.data.user = res.data;
-        wx.setStorageSync("user", that.data.user);
-        that.setData({ user: that.data.user });
+        that.data.seller = res.data;
+        wx.setStorageSync("seller", that.data.seller);
+        that.setData({ seller: that.data.seller });
       }
     })
 
@@ -93,5 +96,18 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  pidsDetail:function(){
+    //传递最大竞争者
+    wx.setStorageSync("curBuyerId", this.data.item.buyerid);
+     wx.navigateTo({
+       url: '/pages/pidList/pidList',
+    })
+  },
+  pid: function () {
+    wx.navigateTo({
+      url: '/pages/pid/pid',
+    })
   }
+
 })

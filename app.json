@@ -1,20 +1,28 @@
 {
   "pages":[
 
-    "pages/pidList/pidList",
+    "pages/RandL/RandL",
+    "pages/type/type",  
+    "pages/typeSearch/typeSearch",
     
     "pages/list/list",
     "pages/listDetail/listDetail",
     "pages/pid/pid",
-    "pages/type/type",
+    "pages/pidList/pidList",
+    
+    
     "pages/cart/cart",
+
+
     "pages/my/my",
     "pages/myinfo/myinfo",
     "pages/myinfo/myinfoMore",
     "pages/myinfo/myinfoNicheng",
     "pages/myinfo/myinfoQianming",
    
-    
+    "components/pid/pid",
+
+
     "pages/index/index",
     "pages/logs/logs"
   ],

@@ -28,16 +28,30 @@ Page({
   onShow: function () {
     //捕获pids
     var that=this;
+    var foodsid = wx.getStorageSync("item").foodsid;
     wx.request({
         url: 'http://localhost:8080/getPids',
         data:{
-         foodsId : 44545731
+          foodsId: foodsid
         },
         success(res){
-          that.data.pids=res.data
-          that.setData({
-            pids: that.data.pids
-          });
+          that.data.pids=res.data;
+          
+          for(let i=0;i<that.data.pids.length;i++){
+            //设置时间格式
+            var date = new Date(that.data.pids[i].pidtime);
+            that.data.pids[i].pidtime =(date.getMonth() + 1) + '-' + date.getDate()+' '+date.getHours()+":"+date.getMinutes();
+          
+             //设置显示竞价信息
+            if (i==0){
+              that.data.pids[i].status="领先";
+            }else{
+             that.data.pids[i].status = "淘汰";
+            }
+          }
+             that.setData({
+                 pids: that.data.pids
+             });
         }
       });
     

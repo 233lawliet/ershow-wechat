@@ -5,8 +5,9 @@
 .top{
   height: 10%;
   width: 100%;
-  border-bottom:4rpx solid rgb(225, 225, 225) ;
+  border-bottom:4rpx solid #ccc ;
   background-color: rgb(240, 240, 240);
+   /**固定不动**/
 
   display: flex;
   flex-direction: row;
@@ -14,7 +15,7 @@
   justify-content: center;
 }
 .search{
-  width: 700rpx;
+  width: 520rpx;
   height: 70%;
   border-radius: 20rpx;
   background-color: #fff;
@@ -25,7 +26,16 @@
   padding-left: 20rpx;
 
 }
-
+.bt{
+  width: 160rpx;
+  height: 70%;
+  display: flex;
+  flex-direction: flex-start;
+  align-items: center;
+  justify-content: center;
+  background-color: yellowgreen;
+  border-radius: 15rpx; 
+}
 .bottom{
   height: 90%;
   width: 100%;
@@ -34,20 +44,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  background-color: rgb(240, 240, 240)
 }
-.left{
-  width: 220rpx;
-  height: 100%;
-  background-color: rgb(240, 240, 240);
-  font-size: 95%;
-  letter-spacing: 2rpx;
-  color: #111;
-}
-.right{
-  width: 530rpx;
-  height: 100%;
-  
-}
+
 
 .sp{
   width: 100%;
@@ -78,7 +77,7 @@
 }
 
 .tian-item{
-  width: 240rpx;
+  width: 230rpx;
   margin-left: 10rpx;
   margin-right: 10rpx; 
   padding-top: 10rpx;

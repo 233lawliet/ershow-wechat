@@ -1,2 +1,39 @@
-<!--pages/type/type.wxml-->
-<text>pages/type/type.wxml</text>
+<view class="content">
+  <view class='top'>
+    <view class='search' bindtap='goSearchFunction'>
+      <text>商品搜索</text>
+
+    </view>
+  </view>
+  <view class='bottom'>
+    <view class='left'>
+      <!--滚动视图-->
+      <scroll-view class='sp' scroll-y>
+        <!--使用block进行循环，不用view-->
+        <block wx:for="{{types}}" wx:key="{{item.typeid}}">
+          <view class="type {{curSelectType==index?'selectTypeColor':''}}" bindtap='clickTypeFunction'  data-index='{{index}}'>{{item.typename}}</view>
+        </block>
+      </scroll-view>
+    </view>
+    <view class='right'>
+      <scroll-view class='sp' scroll-y>
+        <view class='tian-row'>
+          <!--循环items-->
+          <block wx:for="{{items}}" wx:key="{{item.foodsid}}">
+            <view class='tian-item'  bindtap='getDetailFunction' data-item='{{item}}'>
+              <view class='img'>
+                <image src='{{item.image1}}'></image>
+              </view>
+              <view class='fName'>
+                <text>{{item.foodsname}}</text>
+              </view>
+              <view class='price'><text class='price1'>当前价:</text><text class='price2'>￥{{item.curPrice}}</text></view>
+            </view>
+          </block>
+
+
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

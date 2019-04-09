@@ -1,7 +1,32 @@
-<view class='content'>
-  <view class='items' wx:for='{{pids}}' wx:key='item.pidid'>
-    <view class='item'>
-    <text>{{item.nickname}}</text>
-    </view>
+ <view class='content'>
+
+<view  class='item item1'>
+      <view class='item-name'>
+        <text>用户</text>
+      </view>
+      <view class='item-status'>
+       <text>状态</text>
+      </view>
+      <view class='item-time'>
+       <text>竞拍时间</text>
+      </view>
+      <view class='item-price'>
+       <text>竞拍价格</text>
+      </view>
+</view>
+    <view wx:for='{{pids}}' wx:key='item.pidid' class='item'>
+      <view class='item-name'>
+        <text>{{item.nickname}}</text>
+      </view>
+      <view class='item-status'>
+       <text>{{item.status}}</text>
+      </view>
+      <view class='item-time'>
+       <text>{{item.pidtime}}</text>
+      </view>
+      <view class='item-price'>
+       <text>￥{{item.pidprice}}</text>
+      </view>
+
   </view>
 </view>

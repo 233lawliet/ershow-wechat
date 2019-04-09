@@ -1,0 +1,51 @@
+<view class='centent' style="background-image: url('/images/imgs/pic.png')">
+  <view class='main' style="opacity:0.92"   >
+
+    <view class='top'>
+      <view class="top-left {{!chooseFlag?'selectTypeColor':''}}"  bindtap='loginF'  >
+        <text>登录</text>
+      </view>
+      <view class="top-right {{chooseFlag?'selectTypeColor':''}}" bindtap='registerF'>
+        <text>注册</text>
+      </view>
+    </view>
+
+    <view class='bottom'>
+      <view class='account item'>
+        <view class='item-top'>
+          <text>账号：</text>
+        </view>
+
+        <view class='item-bottom'>
+          <input type='text' placeholder='12位校园卡号' bindinput='accountF'></input>
+        </view>
+      </view>
+
+      <view class='password item'>
+        <view class='item-top'>
+          <text>密码：</text>
+        </view>
+
+        <view class='item-bottom'>
+          <input type='text' placeholder='最短长度大于8位' bindinput='passwordF'></input>
+        </view>
+      </view>
+
+      <view class='account item' style="display:{{chooseFlag?'none':''}}">
+        <view class='item-top'>
+          <text>再次确认：</text>
+        </view>
+        <view class='item-bottom' >
+          <input type='text' placeholder='再次输入密码' bindinput='repasswordF'></input>
+        </view>
+      </view>
+
+      <view class='item-botton'>
+        <view class='botton' bindtap='bottonFunciton'>
+          <text>{{chooseFlag?'登录':'注册'}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

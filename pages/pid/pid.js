@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    user:{},
+    item:{},
+    price:'',
   },
 
   /**
@@ -19,6 +21,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    //获取model组件
+    this.modal = this.selectComponent("#modal");
 
   },
 
@@ -26,7 +30,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.data.item=wx.getStorageSync("item");
+    this.data.user = wx.getStorageSync("user");
+    this.setData({
+      item:this.data.item,
+      user:this.data.user
+    })
   },
 
   /**
@@ -62,5 +71,47 @@ Page({
    */
   onShareAppMessage: function () {
 
+  }, 
+  //鼠标响应,时刻监视
+  bindKeyInput: function (e) {
+    this.data.price = e.detail.value;
+  },
+  pid:function(e){
+
+    var that=this
+    wx.request({
+      url: 'http://localhost:8080//pid',
+      data:{
+        foodsid: that.data.item.foodsid,
+        buyerid: that.data.user.userid,
+        nickname:that.data.user.nickname,
+        pidprice:that.data.price,
+        userid:that.data.user.userid
+
+      },
+      success(res){
+        //更新价格
+        that.data.item.curPrice = that.data.price;
+        that.data.item.buyerid = wx.getStorageInfoSync("user").userid;
+        wx.setStorageSync("item", that.data.item);
+        wx.navigateBack({
+          
+        })
+      }
+    })
+  }
+
+ 
+  , showDialog() {
+    this.modal.showModal();
+  },
+  _cancelEvent() {
+    console.log('你点击了取消');
+    this.modal.hideModal();
+  },
+  //确认事件
+  _confirmEvent() {
+    console.log('你点击了确定');
+    this.modal.hideModal();
   }
 })

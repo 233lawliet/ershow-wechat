@@ -1,3 +1,5 @@
+
+var app=getApp()
 // pages/list/list.js
 Page({
 
@@ -27,22 +29,10 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var that = this
-    wx.request({
-      url: 'http://localhost:8080/allFoods',
-      data:{},
-      header:{
-        'content-type': 'application/json' // 默认值
-      },
-      success(res){
-        that.data.items = res.data;
-        console.log(res.data)
-        wx.setStorageSync("items",that.data.items);
-        
-        that.setData({ items: that.data.items });
-      }
-    })
-
+    //用户缓存
+    let user= app.user;
+    wx.setStorageSync("user", user);
+    console.log(user);
   },
 
   /**
@@ -56,6 +46,20 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    var that = this
+    wx.request({
+      url: 'http://localhost:8080/allFoods',
+      data: {},
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        that.data.items = res.data;
+        wx.setStorageSync("items", that.data.items);
+
+        that.setData({ items: that.data.items });
+      }
+    })
 
   },
 
@@ -106,7 +110,6 @@ Page({
     let i = e.currentTarget.dataset.index;
     //准备数据
     let item = this.data.items[i];
-
     //数据放入缓存
     wx.setStorageSync("item", item);
 

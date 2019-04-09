@@ -1,2 +1,101 @@
-<!--pages/pid/pid.wxml-->
-<text>pages/pid/pid.wxml</text>
+<view class='content'>
+
+<view class='top'>
+  <view class='item'>
+    <view class='left'>
+      <view class='img'>
+        <image src='{{item.image1}}'></image>
+      </view>
+    </view>
+    <view class='right'>
+      <view class='right-top'>
+        <text>{{item.foodsname}}</text>
+      </view>
+      <view class='right-mid'>
+        <text>{{item.foodsinfo}}</text>
+      </view>
+      <view class='right-bottom'>
+        <view class='right-bottom-left'>
+          <text>当前竞价：</text>
+        </view>
+        <view class='right-bottom-right'>
+          <text>￥{{item.curPrice}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='info'>
+    <view class='info-top'>
+      <text>提醒：</text>
+    </view>
+    <view class='info-bottom'>
+      <text>1. 该系统是服务于济大学生，希望学生遵守相关规则。{{'\n'}}2. 每个人应当对所拍行为负责，切勿不负责任的竞拍。</text>
+    </view>
+  </view>
+
+
+  <view class='tran'>
+    <view class='tran-left'>
+      <text>交易方式:</text>
+    </view>
+    <view class='tran-left2'>
+      <text>线下交易</text>
+    </view>
+    <view class='tran-right1'>
+      <text>交易地点:</text>
+    </view>
+    <view class='tran-right2'>
+      <text>{{item.place}}</text>
+    </view>
+  </view>
+
+  <view class='seller-info'>
+    <view class='seller-info-left-left'>
+      <text>个人{{'\n'}}信息</text>
+    </view>
+    <view class='seller-info-left'>
+      <image src='{{user.photo}}'></image>
+    </view>
+    <view class='seller-info-right'>
+      <view class='seller-info-right-top'>
+        <view class='seller-info-right-top-name'>
+          <text>{{user.nickname}}</text>
+        </view>
+        <view class='seller-info-right-top-other'>
+
+        </view>
+      </view>
+      <view class='seller-info-right-bottom'>
+        <text>{{user.school}} -</text>
+        <text>{{' '+user.stage}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='pid'>
+    <view class='pid-left'>
+      <text>我的竞价：</text>
+    </view>
+    <view class='pid-mid'>
+      <input type='text' bindinput='bindKeyInput' placeholder='请输入正确格式' focus='true'></input>
+    </view>
+    <view class='pid-right'>
+    <text>(元)</text>
+    </view>
+  </view>
+</view>
+
+
+<view class='bottom' bindtap='pid'>
+  <text>我要竞拍</text>
+</view>
+</view>
+
+<!--
+<modal id='modal' 
+    modalTitle='这里是标题' 
+    modalMsg='我是内容' 
+    bind:cancelEvent="_cancelEvent"  
+    bind:confirmEvent="_confirmEvent">
+</modal>
+-->

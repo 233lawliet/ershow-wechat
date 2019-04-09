@@ -73,20 +73,20 @@
           <text>店家{{'\n'}}信息</text>
         </view>
         <view class='seller-info-left'>
-          <image src='{{user.photo}}'></image>
+          <image src='{{seller.photo}}'></image>
         </view>
         <view class='seller-info-right'>
           <view class='seller-info-right-top'>
             <view class='seller-info-right-top-name'>
-              <text>{{user.nickname}}</text>
+              <text>{{seller.nickname}}</text>
             </view>
             <view class='seller-info-right-top-other'>
-              <text>{{user.school}} -</text>
-              <text>{{' '+user.stage}}</text>
+              <text>{{seller.school}} -</text>
+              <text>{{' '+seller.stage}}</text>
             </view>
           </view>
           <view class='seller-info-right-bottom'>
-            <text>{{user.autograph}}</text>
+            <text>{{seller.autograph}}</text>
           </view>
         </view>
       </view>
@@ -115,11 +115,13 @@
 
       </view>
     </view>
-    <view class='cart' bindtap='addCart'>
+    <view class='cart' bindtap='pidsDetail'>
       <text>竞价列表</text>
     </view>
-    <view class='payNow'>
+    <view class='payNow' bindtap='pid'>
       <text>我要竞拍</text>
     </view>
+    
+
   </view>
 </view>
