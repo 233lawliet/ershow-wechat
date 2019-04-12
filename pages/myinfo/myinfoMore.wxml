@@ -22,7 +22,7 @@
               <text>学号</text>
             </view>
             <view class='item-right'>
-              <input class='studentId' type='text'></input>
+              <input class='studentId' type='text' bindinput='studentidF' value='{{user.studentid}}'></input>
             </view>
           </view>
           <view class='item-foot-item'>
@@ -30,7 +30,7 @@
               <text>密码</text>
             </view>
             <view class='item-right'>
-              <input class='password' type='text'></input>
+              <input class='password' type='text' bindinput='passwordF' value='{{user.psword}}'></input>
             </view>
           </view>
           <view class='item-foot-item'>
@@ -38,7 +38,7 @@
               <text>手机</text>
             </view>
             <view class='item-right'>
-              <input class='phone' type='text'></input>
+              <input class='phone' type='text' bindinput='phoneF' value='{{user.phone}}'></input>
             </view>
           </view>
           <view class='item-foot-item'>
@@ -46,7 +46,7 @@
               <text>邮箱</text>
             </view>
             <view class='item-right'>
-              <input class='email' type='text'></input>
+              <input class='email' type='text' bindinput='emailF' value='{{user.email}}'></input>
             </view>
           </view>
         </view>
@@ -71,31 +71,43 @@
               <text>姓名</text>
             </view>
             <view class='item-right'>
-              <input class='' type='text'></input>
+              <input class='' type='text' bindinput='nameF' value='{{user.username}}'></input>
             </view>
           </view>
           <view class='item-foot-item'>
             <view class='item-left'>
               <text>性别</text>
             </view>
-            <view class='item-right'>
-              <input class='gender' type='text'></input>
+            <view class='item-right gender'>
+              <radio-group class="radio-group" bindchange="radioChange">
+                <label class="radio" wx:for="{{gender}}" wx:key="{{item.name}}">
+                  <radio value="{{item.name}}" checked="{{item.checked}}" /> {{item.value}}
+                </label>
+              </radio-group>
             </view>
           </view>
           <view class='item-foot-item'>
             <view class='item-left'>
-              <text>生日</text>
+              <text>年龄</text>
             </view>
             <view class='item-right'>
-              <input class='birthday' type='text'></input>
+              <input class='birthday' type='text' bindinput='birthdayF' value='{{user.age}}'></input>
             </view>
           </view>
           <view class='item-foot-item'>
             <view class='item-left'>
-              <text>住址</text>
+              <text>住址(省)</text>
             </view>
             <view class='item-right'>
-              <input class='address' type='text'></input>
+              <input class='address' type='text' bindinput='address1F' value='{{user.address1}}'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>住址(市)</text>
+            </view>
+            <view class='item-right'>
+              <input class='address' type='text' bindinput='address2F' value='{{user.address2}}'></input>
             </view>
           </view>
 
@@ -121,7 +133,7 @@
               <text>学校</text>
             </view>
             <view class='item-right'>
-              <input class='school' type='text'></input>
+              <input class='school' type='text' bindinput='universityF' value='{{user.university}}'></input>
             </view>
           </view>
           <view class='item-foot-item'>
@@ -129,7 +141,7 @@
               <text>学院</text>
             </view>
             <view class='item-right'>
-              <input class='major' type='text'></input>
+              <input class='major' type='text' bindinput='schoolF' value='{{user.school}}'></input>
             </view>
           </view>
           <view class='item-foot-item'>
@@ -137,7 +149,7 @@
               <text>专业</text>
             </view>
             <view class='item-right'>
-              <input class='univercity' type='text'></input>
+              <input class='univercity' type='text' bindinput='majorF' value='{{user.major}}'></input>
             </view>
           </view>
           <view class='item-foot-item'>
@@ -145,7 +157,16 @@
               <text>班级</text>
             </view>
             <view class='item-right'>
-              <input class='class' type='text'></input>
+              <input class='class' type='text' bindinput='classF' value='{{user.classname}}'></input>
+            </view>
+          </view>
+
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>阶段</text>
+            </view>
+            <view class='item-right'>
+              <input class='hostel' type='text' bindinput='stageF' value='{{user.stage}}'></input>
             </view>
           </view>
           <view class='item-foot-item'>
@@ -153,7 +174,7 @@
               <text>宿舍</text>
             </view>
             <view class='item-right'>
-              <input class='hostel' type='text'></input>
+              <input class='hostel' type='text' bindinput='dormF' value='{{user.dorm}}'></input>
             </view>
           </view>
 
@@ -162,10 +183,10 @@
     </block>
   </scroll-view>
   <view class='bottom'>
-    <view class="bottom-left" >
+    <view class="bottom-left">
       <button catchtap='cancelFunction'>取消</button>
     </view>
-    <view class="bottom-right" >
+    <view class="bottom-right">
       <button catchtap='changeFunction'>修改</button>
     </view>
   </view>

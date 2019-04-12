@@ -1,3 +1,4 @@
+var app=getApp()
 // pages/myinfo/myinfoNicheng.js
 Page({
 
@@ -5,9 +6,9 @@ Page({
    * Page initial data
    */
   data: {
-    nicheng:"路通",
-    focus: true
-
+    nicheng:"",
+    focus: true,
+    user:{},
   },
 
   /**
@@ -15,11 +16,7 @@ Page({
    */
   //修改标题
   onLoad: function(options) {
-    this.data.nicheng= wx.getStorageSync("nicheng");
-    this.setData({
-      nicheng:this.data.nicheng,
-      focus:this.data.focus
-    })
+   
   },
 
   /**
@@ -33,7 +30,9 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function() {
-
+    this.setData({
+      user:app.user
+    })
   },
 
   /**
@@ -72,7 +71,7 @@ Page({
   },
   //鼠标响应,时刻监视
   bindKeyInput: function (e) {
-    this.data.nicheng = e.detail.value;
+     this.data.nicheng= e.detail.value;
   },
 
   //取消
@@ -83,10 +82,20 @@ Page({
   },
   //更改
   okFunction:function(){
-    
-    wx.setStorageSync("nicheng", this.data.nicheng);
-    wx.navigateBack({
-      
+    var that=this
+    wx.request({
+      url: 'http://localhost:8080/updateUserInfo',
+      data:{
+        studentid: app.user.studentid,
+        nickname: that.data.nicheng
+      },
+      success(res){
+        app.user.nickname = that.data.nicheng;
+        wx.navigateBack({
+          
+        })
+        
+      }
     })
   }
 })

@@ -1,3 +1,4 @@
+var app=getApp()
 // pages/myinfo/myinfo.js
 Page({
 
@@ -8,19 +9,13 @@ Page({
     touxiang: "/images/imgs/lawliet.jpg", //把照片路径存到变量中，
     touxaingHidden: false, //让展示照片的view显示
 
-    nicheng: "",
-    qianming: "",
-    zhanghao: "这是我的账号",
+    user:{},
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    this.data.qianming = "temp这是我的签名啦"
-    this.data.nicheng = "temp昵称"
-    wx.setStorageSync("nicheng", "temp昵称")
-    wx.setStorageSync("qianming", "temp这是我的签名啦")
     
   },
 
@@ -35,11 +30,10 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    this.data.nicheng = wx.getStorageSync("nicheng")
-    this.data.qianming = wx.getStorageSync("qianming")
+    //this.data.user=app.user;
+    this.data.user=app.user;
     this.setData({
-      nicheng: this.data.nicheng,
-      qianming: this.data.qianming
+      user:this.data.user
     })
   },
 

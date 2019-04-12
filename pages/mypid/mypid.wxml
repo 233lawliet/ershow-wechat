@@ -1,0 +1,66 @@
+<view class='centent' >
+
+    <view class='top'>
+      <view class="top-left {{!chooseFlag?'selectTypeColor':''}}"  bindtap='leftF'  >
+        <text>我的竞拍</text>
+      </view>
+      <view class="top-right {{chooseFlag?'selectTypeColor':''}}" bindtap='rightF'>
+        <text>我的拍卖</text>
+      </view>
+    </view>
+
+    <view class='mid' wx:if="{{chooseFlag}}">
+      <view class='mid-name'>
+      <text>商品名称</text>
+      </view>
+      <view class='mid-time'>
+        <text>竞拍时间</text>
+      </view>
+      <view class='mid-price'>
+        <text>竞拍价格</text>
+      </view>
+      <view class='mid-status'>
+        <text>状态</text>
+      </view>
+    </view>
+    <view class='mid' wx:else="{{chooseFlag}}">
+      <view class='mid-name'>
+      <text>商品名称</text>
+      </view>
+      <view class='mid-time'>
+        <text>起拍价格</text>
+      </view>
+      <view class='mid-price'>
+        <text>最终价格</text>
+      </view>
+      <view class='mid-status'>
+        <text>竞拍者</text>
+      </view>
+    </view>
+
+
+    <view class='bottom'>
+     <scroll-view class='sp' scroll-y>
+        <!--使用block进行循环，不用view-->
+        <block wx:for="{{items}}" wx:key="{{item.foodsid}}">
+          <view class='item'>
+           <view class='item-name'>
+            <text>{{item.foodsName}}{{item.foodsname}}</text>
+           </view>
+           <view class='item-time'>
+            <text>{{item.pidtime}}{{item.sellerid}}</text>
+           </view>
+           <view class='item-price'>
+           <text>{{item.pidprice}}{{item.buyerprice}}</text>
+           </view>
+           <view class='item-status'>
+            <text>{{item.pidid}}{{item.buyername}}</text>
+           </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+
+
+
+</view>

@@ -1,4 +1,6 @@
 // pages/myinfo/myinfoNicheng.js
+
+var app=getApp()
 Page({
 
   /**
@@ -14,11 +16,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    this.data.qianming = wx.getStorageSync("qianming");
-    this.setData({
-      qianming: this.data.qianming,
-      focus: this.data.focus
-    })
+   
   },
 
   /**
@@ -32,7 +30,10 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    this.setData({
+      autograph: app.user.autograph,
+      focus: this.data.focus
+    })
   },
 
   /**
@@ -71,7 +72,7 @@ Page({
   },
   //鼠标响应,时刻监视
   bindKeyInput: function (e) {
-    this.data.qianming = e.detail.value;
+    this.data.autograph = e.detail.value;
   },
 
   //取消
@@ -83,9 +84,20 @@ Page({
   //更改
   okFunction: function () {
 
-    wx.setStorageSync("qianming",this.data.qianming);
-    wx.navigateBack({
+    var that = this
+    wx.request({
+      url: 'http://localhost:8080/updateUserInfo',
+      data: {
+        studentid: app.user.studentid,
+        autograph: that.data.autograph
+      },
+      success(res) {
+        app.user.autograph = that.data.autograph;
+        wx.navigateBack({
+        })
 
+      }
     })
+    
   }
 })

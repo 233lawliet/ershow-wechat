@@ -1,18 +1,19 @@
 {
   "pages":[
+"pages/list/list",
+    "pages/mysell/mysell",
+
+    
+    "pages/listDetail/listDetail",
+    "pages/listPid/listPid",
+    "pages/listPidList/listPidList",
+    
+    "pages/type/type",
+    "pages/typeSearch/typeSearch",
 
     "pages/RandL/RandL",
-    "pages/type/type",  
-    "pages/typeSearch/typeSearch",
     
-    "pages/list/list",
-    "pages/listDetail/listDetail",
-    "pages/pid/pid",
-    "pages/pidList/pidList",
-    
-    
-    "pages/cart/cart",
-
+    "pages/mypid/mypid",
 
     "pages/my/my",
     "pages/myinfo/myinfo",
@@ -20,7 +21,7 @@
     "pages/myinfo/myinfoNicheng",
     "pages/myinfo/myinfoQianming",
    
-    "components/pid/pid",
+    
 
 
     "pages/index/index",
@@ -47,8 +48,8 @@
         "selectedIconPath": "/images/icons/typeSelect.png"
       },
       {
-        "pagePath": "pages/cart/cart",
-        "text": "购物车",
+        "pagePath": "pages/mypid/mypid",
+        "text": "我的拍卖",
         "iconPath": "/images/icons/cart.png",
         "selectedIconPath": "/images/icons/cartSelect.png"
       },

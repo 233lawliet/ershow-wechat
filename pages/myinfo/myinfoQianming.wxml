@@ -1,6 +1,6 @@
 <view class="content">
   <view class='top'>
-    <input type='text' value="{{qianming}}" bindinput='bindKeyInput' auto-focus="{{focus}}"></input>
+    <input type='text' value="{{autograph}}" bindinput='bindKeyInput' auto-focus="{{focus}}"></input>
   </view>
   <view class='mid'></view>
   <view class='bottom'>

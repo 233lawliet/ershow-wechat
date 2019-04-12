@@ -1,3 +1,6 @@
+
+
+var app=getApp()
 // pages/my/my.js
 Page({
 
@@ -5,14 +8,28 @@ Page({
    * Page initial data
    */
   data: {
-
+    user:{}
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    var that=this;
+    wx.request({
+      url: 'http://localhost:8080/getUserById',
+      data: {
+        //studentid: app.user.studentid,
+        studentid: 123456,
+      },
+      success(res) {
+        app.user = res.data;
+        wx.setStorageSync("user", app.user);
+        that.setData({
+          user: app.user
+        })
+      }
+    })
   },
 
   /**
@@ -26,7 +43,9 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    //this.data.user=app.user;
+    
+    
   },
 
   /**

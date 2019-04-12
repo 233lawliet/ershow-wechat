@@ -87,7 +87,6 @@ Page({
         nickname:that.data.user.nickname,
         pidprice:that.data.price,
         userid:that.data.user.userid
-
       },
       success(res){
         //更新价格

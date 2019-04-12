@@ -101,12 +101,12 @@ Page({
     //传递最大竞争者
     wx.setStorageSync("curBuyerId", this.data.item.buyerid);
      wx.navigateTo({
-       url: '/pages/pidList/pidList',
+       url: '/pages/listPidList/listPidList',
     })
   },
   pid: function () {
     wx.navigateTo({
-      url: '/pages/pid/pid',
+      url: '/pages/listPid/listPid',
     })
   }
 

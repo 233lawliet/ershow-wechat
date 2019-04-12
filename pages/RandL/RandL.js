@@ -12,8 +12,35 @@ Page({
     password:"",
     repassword:"",
     user:{},
-  },
 
+    
+   
+  },
+  showModel: function (info) {
+    wx.showModal({
+      title: '提示',
+      content: info,
+      showCancel:false
+    })
+  },
+  showRegisterModel:function(){
+    wx.showModal({
+      title: '恭喜你，注册成功！',
+      content: '现在去完善个人信息吧。',
+      showCancel: false,
+      success(res){
+        console.log(res)
+        if(res.confirm){
+          console.log("调用了");
+          wx.navigateTo({
+            url: '/pages/myinfo/myinfo',
+          })
+        }
+      }
+    })
+  },
+  
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -78,22 +105,8 @@ Page({
   repasswordF: function (e) {
     this.data.repassword=e.detail.value
   },
-
-
-  loginF:function(){
-    this.data.chooseFlag=true
-    this.setData({
-      chooseFlag:this.data.chooseFlag
-    })
-  },
-  registerF: function () {
-    this.data.chooseFlag = false
-    this.setData({
-      chooseFlag:this.data.chooseFlag
-    })
-  },
+  
   login:function(){
-    console.log("login")
     var that=this;      
     wx.request({
       url: 'http://localhost:8080/checkLogin',
@@ -102,19 +115,71 @@ Page({
         psword:that.data.password
       },
       success(res){
+        if(res.data==null||res.data==''){
+          that.showModel("账号或密码错误！");
+        }else{
+          app.user = res.data
+          wx.switchTab({
+            url: '/pages/list/list',
+          });
+        }
         
-        app.user = res.data
-        wx.switchTab({
-          url: '/pages/list/list',
-        });
       }
     });
-    
   },
   register:function(){
-    console.register("register")
+    if(this.data.password!=this.data.repassword){
+      this.showModel("两次密码不一致！");
+    }else {
+      var that = this;
+      wx.request({
+        url: 'http://localhost:8080/checkAccount',
+        data: {
+          studentid: that.data.account
+        },
+        success(res) {
+          //数据插入
+          if(res.data==0){
+            wx.request({
+              url: 'http://localhost:8080/insertUser',
+              data: {
+                studentid: that.data.account,
+                psword: that.data.password
+              },
+              success(res) {
+                //用户信息获取
+                wx.request({
+                  url: 'http://localhost:8080/checkLogin',
+                  data: {
+                    studentid: that.data.account,
+                    psword: that.data.password
+                  },
+                  success(res) {
+                   app.user = res.data
+                  }
+                });
+                that.showRegisterModel();
+              }
+            })
+          }else{
+            that.showModel("账号已存在");
+          }
+        }
+      })
+    }
   },
-
+  loginF: function () {
+    this.data.chooseFlag = true
+    this.setData({
+      chooseFlag: this.data.chooseFlag
+    })
+  },
+  registerF: function () {
+    this.data.chooseFlag = false
+    this.setData({
+      chooseFlag: this.data.chooseFlag
+    })
+  },
   bottonFunciton:function(){
       if(this.data.chooseFlag){
         this.login()
