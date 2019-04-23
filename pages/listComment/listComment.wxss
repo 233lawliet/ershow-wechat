@@ -1,0 +1,274 @@
+.content {
+  width: 100%;
+  height: 100vh;
+  background-color: #eee;
+  
+  
+}
+
+.items {
+  width: 100%;
+  height:90%;
+}
+
+.item {
+  width: 100%;
+  border-bottom: 20rpx #eee solid;
+  padding-top: 20rpx;
+}
+
+.item-head {
+  height: 110rpx;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ddd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 20rpx;
+}
+
+.item-head-left {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-head-photo{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-head-photo image{
+  width: 80%;
+  height: 70%;
+}
+
+.item-head-name{
+  width: 60%;
+  height: 100%;
+  font-size: 80%;
+  letter-spacing: 1rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-head-mid {
+  width: 58%;
+  height: 100%;
+  padding-left: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 90%;
+  color: #777;
+}
+.item-head-right {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 99%;
+  color: #777;
+}
+
+
+
+
+.xiangxia {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.xiangxia image {
+  width: 100%;
+  height: 100%;
+}
+
+.item-foot {
+  width: 100%;
+  background-color: #f8f8f8;
+  border-radius: 20rpx;
+}
+
+.item-foot-item {
+  width: 95%;
+  height: 95rpx;
+  padding-left: 5%;
+  border-bottom: 2rpx #ddd solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-left {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 95%;
+  color: #222;
+}
+
+.item-right {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 95%;
+}
+
+
+
+
+
+
+.bottom {
+  width: 100%;
+  height: 8%;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color:#eee;
+  opacity: 0.70;
+}
+
+.reply1{
+  height: 90%;
+  width: 70%;
+  background-color:#999;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 105%;
+  letter-spacing: 5rpx;
+  border-radius: 20rpx;
+}
+
+
+
+.reply{
+  height: 100%;
+  width: 80%;
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 110%;
+  font-weight: bold;
+  letter-spacing: 5rpx;
+  border-radius: 20rpx;
+}
+
+
+
+.toast-box {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+ 
+.toastbg {
+    opacity: 0.2;
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+}
+ 
+.showToast {
+    position: absolute;
+    opacity: 1;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 40%;
+}
+ 
+.toast-title {
+    padding-left: 5%;
+    background-color: #777;
+    color: white;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    border-top-right-radius: 16rpx;
+    border-top-left-radius: 16rpx;
+}
+ 
+.toast-main {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    background-color: white;
+    text-align: center;
+}
+ 
+.toast-input {
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 1px solid #ddd;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+
+}
+ 
+.toast-button {
+    display: flex;
+}
+ 
+.button1 {
+    width: 50%;
+}
+ 
+.button2 {
+    width: 50%;
+}
+ 
+.button1 button {
+    width: 100%;
+    background-color: white;
+    color: red;
+    border-radius: 0px;
+    border-bottom-left-radius: 16rpx;
+}
+ 
+.button2 button{
+    width: 100%;
+    background-color: white;
+    color: black;
+    border-radius: 0px;
+    border-bottom-right-radius: 16rpx;
+}
+ 
+.picker {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+

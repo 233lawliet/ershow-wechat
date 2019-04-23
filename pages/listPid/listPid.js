@@ -1,4 +1,5 @@
 // pages/pid/pid.js
+var app = getApp();
 Page({
 
   /**
@@ -8,6 +9,16 @@ Page({
     user:{},
     item:{},
     price:'',
+  },
+
+  showModel: function () {
+    wx.showModal({
+      title: '提示：',
+      content: '请保证正确的价格！',
+      showCancel: false,
+      success(res) {
+      }
+    })
   },
 
   /**
@@ -78,26 +89,36 @@ Page({
   },
   pid:function(e){
 
-    var that=this
-    wx.request({
-      url: 'http://localhost:8080//pid',
-      data:{
-        foodsid: that.data.item.foodsid,
-        buyerid: that.data.user.userid,
-        nickname:that.data.user.nickname,
-        pidprice:that.data.price,
-        userid:that.data.user.userid
-      },
-      success(res){
-        //更新价格
-        that.data.item.curPrice = that.data.price;
-        that.data.item.buyerid = wx.getStorageInfoSync("user").userid;
-        wx.setStorageSync("item", that.data.item);
-        wx.navigateBack({
-          
-        })
-      }
-    })
+    var that = this;
+    console.log(that.data.price);
+    //输入的价格判定
+    if ((that.data.curPrice == null && that.data.price > that.data.item.startprice)|| (that.data.curPrice != null&&that.data.price >that.data.item.curPrice)){
+      wx.request({
+        url: 'http://localhost:8080//pid',
+        data: {
+          foodsid: that.data.item.foodsid,
+          foodsname: that.data.item.foodsname,
+          buyerid: that.data.user.userid,
+          nickname: that.data.user.nickname,
+          pidprice: that.data.price,
+          userid: that.data.user.userid
+        },
+        success(res) {
+          //更新价格
+          that.data.item.curPrice = that.data.price;
+          that.data.item.buyerid = wx.getStorageInfoSync("user").userid;
+          wx.setStorageSync("item", that.data.item);
+          wx.navigateBack({
+
+          })
+        }
+      })
+    }else{
+      that.showModel();
+    }
+    
+
+   
   }
 
  

@@ -17,7 +17,7 @@
         </view>
 
         <view class='item-bottom'>
-          <input type='text' placeholder='12位校园卡号' bindinput='accountF'></input>
+          <input type='text' placeholder='12位校园卡号' bindinput='accountF'    ></input>
         </view>
       </view>
 
@@ -27,7 +27,7 @@
         </view>
 
         <view class='item-bottom'>
-          <input type='text' placeholder='最短长度大于8位' bindinput='passwordF'></input>
+          <input type='password' placeholder='最短长度大于8位'  bindinput='passwordF' ></input>
         </view>
       </view>
 
@@ -36,7 +36,7 @@
           <text>再次确认：</text>
         </view>
         <view class='item-bottom' >
-          <input type='text' placeholder='再次输入密码' bindinput='repasswordF'></input>
+          <input type='password' placeholder='再次输入密码' bindinput='repasswordF'></input>
         </view>
       </view>
 

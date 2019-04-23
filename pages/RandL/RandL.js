@@ -118,9 +118,11 @@ Page({
         if(res.data==null||res.data==''){
           that.showModel("账号或密码错误！");
         }else{
-          app.user = res.data
+          app.user = res.data,
+
+
           wx.switchTab({
-            url: '/pages/list/list',
+            url: '/pages/my/my',
           });
         }
         

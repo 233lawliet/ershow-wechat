@@ -1,4 +1,6 @@
 var app=getApp()
+
+
 // pages/myinfo/myinfo.js
 Page({
 
@@ -8,9 +10,12 @@ Page({
   data: {
     touxiang: "/images/imgs/lawliet.jpg", //把照片路径存到变量中，
     touxaingHidden: false, //让展示照片的view显示
-
+    
     user:{},
-  },
+
+    //系统图片路径
+    imgPath: 'http://maoerfei.cn:8000/ershow/'
+    },
 
   /**
    * Lifecycle function--Called when page load
@@ -82,19 +87,33 @@ Page({
         // 无论用户是从相册选择还是直接用相机拍摄，路径都是在这里面
         var filePath = res.tempFilePaths[0];
         //将刚才选的照片/拍的 放到下面view视图中
+        that.data.user.photo = filePath;
+        console.log(filePath);
         that.setData({
-          touxiang: filePath, //把照片路径存到变量中，
+          user: that.data.user, //把照片路径存到变量中，
           touxiangHidden: false //让展示照片的view显示
         });
-        // 这个是使用微信接口保存文件到数据库
-        // wx.uploadFile({
-        //   url: "",
-        //   filePath: filePath,
-        //   name: 'file',
-        //   success: function (res) {
-
-        //   }
-        // })
+        // 这个是使用微信接口保存文件服务器
+         wx.uploadFile({
+              url: "http://localhost:8080/upload",
+              filePath: filePath,
+              name: 'file',
+              success: function (res) {
+                //photo的完整路径
+                that.data.user.photo = that.data.imgPath + res.data;
+                //更新数据库
+                wx.request({
+                  url: 'http://localhost:8080/updateUserInfo',
+                  data: {
+                    studentid: app.user.studentid,
+                    photo:that.data.user.photo
+                  },
+                  success(res) {
+                  
+                  }
+                })
+              }
+         })
       },
       fail: function (error) {
         console.error("调用本地相册文件时出错")

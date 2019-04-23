@@ -8,34 +8,25 @@ Page({
    * Page initial data
    */
   data: {
-    user:{}
+    userTemp:{
+      photo:'/images/imgs/photo.png',
+      nickname:'去登录',
+      autograph:'空白',
+    },
+    user:null
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    var that=this;
-    wx.request({
-      url: 'http://localhost:8080/getUserById',
-      data: {
-        //studentid: app.user.studentid,
-        studentid: 123456,
-      },
-      success(res) {
-        app.user = res.data;
-        wx.setStorageSync("user", app.user);
-        that.setData({
-          user: app.user
-        })
-      }
-    })
+   
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
-  onReady: function () {
+  onReady: function () { 
 
   },
 
@@ -43,11 +34,30 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    //this.data.user=app.user;
     
-    
+    //渲染数据
+    if(app.user==null||app.user==''){
+      this.setData({
+        user: this.data.userTemp
+      })
+    }else{
+      
+      //填入信息
+      this.data.user=app.user;
+      wx.setStorageSync("user", app.user);
+      this.setData({
+        user: this.data.user
+      })
+    }
   },
 
+  showModel: function (info) {
+    wx.showModal({
+      title: '提示',
+      content: info,
+      showCancel: false
+    })
+  },
   /**
    * Lifecycle function--Called when page hide
    */
@@ -83,8 +93,32 @@ Page({
 
   },
   changeInfoFunction:function(){
-    wx.navigateTo({
-      url: '/pages/myinfo/myinfo',
+    if (this.data.user.studentid==null||this.data.user.studentid==''){
+      wx.navigateTo({
+        url: '/pages/RandL/RandL',
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/myinfo/myinfo',
+      })
+    }
+  },
+  myPid: function () {
+    if(app.user==null||app.user==''){
+      this.showModel("请先登录！");
+    }else{
+      wx.navigateTo({
+        url: '/pages/mysell/mysell',
+      })
+    }
+  },
+  loginout:function(){
+    app.user="";
+    wx.setStorageSync("user", null);
+    
+    this.data.user=this.data.userTemp
+    this.setData({
+      user:this.data.userTemp
     })
   }
 })

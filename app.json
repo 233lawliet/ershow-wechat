@@ -1,9 +1,16 @@
 {
   "pages":[
-"pages/list/list",
-    "pages/mysell/mysell",
 
-    
+    "pages/list/list",
+
+    "pages/listComment/listComment",
+
+    "pages/my/my",
+    "pages/mypid/mypid",
+ 
+"pages/mysell/mysell",
+ 
+
     "pages/listDetail/listDetail",
     "pages/listPid/listPid",
     "pages/listPidList/listPidList",
@@ -11,16 +18,12 @@
     "pages/type/type",
     "pages/typeSearch/typeSearch",
 
-    "pages/RandL/RandL",
     
-    "pages/mypid/mypid",
-
-    "pages/my/my",
+   
     "pages/myinfo/myinfo",
     "pages/myinfo/myinfoMore",
     "pages/myinfo/myinfoNicheng",
-    "pages/myinfo/myinfoQianming",
-   
+    "pages/myinfo/myinfoQianming", 
     
 
 

@@ -210,6 +210,7 @@
   color: #000;
 }
 .seller-info-right-top-name{
+  margin-left: 10%;
   width: 40%;
   height: 100%;
   display: flex;

@@ -32,7 +32,7 @@ Page({
     //用户缓存
     let user= app.user;
     wx.setStorageSync("user", user);
-    console.log(user);
+   
   },
 
   /**

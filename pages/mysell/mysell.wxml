@@ -35,7 +35,7 @@
             </picker>
           </view>
         </view>
-        <view class='item-foot-item'>
+        <view class='item-foot-item '>
           <view class='item-left'>
             <text>商品简介</text>
           </view>
@@ -43,12 +43,20 @@
             <input class='phone' type='text' bindinput='infoF'></input>
           </view>
         </view>
-        <view class='item-foot-item'>
+        <view class='item-foot-item image-item'>
           <view class='item-left'>
             <text>商品图片</text>
           </view>
           <view class='item-right'>
-            <input class='email' type='text' bindinput='imageF'></input>
+            <view class='img' hidden='{{touxiangHidden}}' bindtap='chooseImg1' >
+              <image src='{{image1}}'></image>
+            </view>
+            <view class='img' hidden='{{touxiangHidden}}' bindtap='chooseImg2'>
+              <image src='{{image2}}'></image>
+            </view>
+            <view class='img' hidden='{{touxiangHidden}}' bindtap='chooseImg3'>
+              <image src='{{image3}}'></image>
+            </view>
           </view>
         </view>
       </view>
@@ -95,7 +103,20 @@
       </view>
     </view>
 
-  <view class='item'>
+
+
+    <view class='pay-info'>
+        <view class='pay-infos'>
+          <view class='pay-info-top'>
+            <text>提醒：</text>
+          </view>
+          <view class='pay-info-bottom'>
+            <text>{{'\t'}}请店家在提交物品前，务必完善个人信息。{{'\n'}}{{'\t'}}以方便购买者及时联系。</text>
+          </view>
+        </view>
+      </view>
+
+    <view class='item'>
       <view class='item-head' bindtap="getMoreFunction1">
         <view class='item-head-left'>
           <text>个人信息</text>

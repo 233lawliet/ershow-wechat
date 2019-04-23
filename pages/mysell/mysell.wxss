@@ -7,7 +7,6 @@
 .top{
   width: 100%;
   height: 90%;
-
 }
 
 .item {
@@ -146,4 +145,59 @@
  font-size: 110%;
   color: #fff;
   background-color: red;
+}
+
+.image-item{
+  height: 160rpx;
+  width: 100%;
+}
+.image-item .item-right{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+.image-item .img{
+ height: 90%;
+ width: 25%;
+ margin-left: 1%;
+}
+
+.image-item .img image{
+  height: 100%;
+  width: 100%;
+}
+
+
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+
+.pay-info{
+  width: 690rpx;
+  height: 110rpx;
+  border-top: 5rpx solid #c1f30e;
+  padding: 15rpx 30rpx 15rpx 30rpx;
+  background-color: rgb(225, 243, 176);
+}
+.pay-infos{
+  width: 100%;
+  height: 100%;
+  font-size: 70%;
+}
+.pay-infos-top{
+  width: 100%;
+  height: 100%;
+  font-size: 70%;
+  border-bottom: 2rpx solid #111;
+}
+.pay-infos-bottom{
+  width: 100%;
+  height: 100%;
+  font-size: 70%;
+  border-bottom: 2rpx solid #111;
 }

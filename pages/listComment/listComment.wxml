@@ -1,0 +1,120 @@
+<view class="content">
+  <scroll-view class='items' scroll-y>
+    <block>
+
+
+      <view class='item'  wx:for="{{allItems}}" wx:key="{{item.item.commentid}}">
+        <view class='item-head' data-index='{{index}}' bindtap="getMoreFunction1">
+          <view class='item-head-left'>
+            <view class='item-head-photo'>
+              <image src='{{item.item.photo}}'></image>
+            </view>
+            <view class='item-head-name'>
+              <text>{{item.item.nickname}}</text>
+            </view>
+          </view>
+          <view class='item-head-mid'>
+            <view class='comment'>
+              <text>{{item.item.comments}}</text>
+            </view>
+          </view>
+          <view class='item-head-right' bindtap='showLouFunction' data-commentobject='{{item.item.commentid}}'>
+            <view class='xiangxia'>
+              <image src='/images/icons/reply2.png'></image>
+            </view>
+          </view>
+        </view>
+
+        <view class='item-foot'  wx:for="{{item.childItems}}" wx:for-item="newItem" wx:key="{{newItem.commentid}}">
+          <view class='item-foot-item' >
+            <view class='item-head-left'>
+              <view class='item-head-photo'>
+                <image src='{{newItem.photo}}'></image>
+              </view>
+              <view class='item-head-name'>
+                <text>{{newItem.nickname}}</text>
+              </view>
+            </view>
+            <view class='item-head-mid'>
+              <view class='comment'>
+                <text>{{newItem.comments}}</text>
+              </view>
+            </view>
+            <view class='item-head-right'>
+            </view>
+
+
+          </view>
+
+
+
+
+        </view>
+      </view>
+
+    </block>
+  </scroll-view>
+
+  <view class='bottom'>
+    <view class='reply' bindtap='showDianFunction' data-commentobject='-1'>
+      <text>回复店家</text>
+    </view>
+  </view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+<view class='toast-box' hidden='{{!ifLou}}'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-title'>
+                <text>回复楼主</text>
+            </view>
+            <view class='toast-main'>
+                <view class='toast-input'>
+                     <input placeholder=''  bindinput='setValue' ></input>
+                </view>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <button catchtap='cancel'>取消</button>
+                </view>
+                <view class='button2'>
+                    <button catchtap='confirm'>确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+
+    <view class='toast-box' hidden='{{!ifDian}}'>
+        <view class='toastbg'></view>
+        <view class='showToast'>
+            <view class='toast-title'>
+                <text>回复店家</text>
+            </view>
+            <view class='toast-main'>
+                <view class='toast-input'>
+                    <input placeholder='' data-commentObject='{{item.commentid}}' bindinput='setValue' ></input>
+                </view>
+            </view>
+            <view class='toast-button'>
+                <view class='button1'>
+                    <button catchtap='cancel'>取消</button>
+                </view>
+                <view class='button2'>
+                    <button catchtap='confirm'>确定</button>
+                </view>
+            </view>
+        </view>
+    </view>

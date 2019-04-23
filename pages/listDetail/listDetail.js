@@ -1,6 +1,8 @@
 // pages/listDetail/listDetail.js
 
 
+var app = getApp();
+
 Page({
 
   /**
@@ -10,6 +12,23 @@ Page({
     item:{},
     seller:{},
     imageList:[],
+  },
+
+
+  showModel: function () {
+    wx.showModal({
+      title: '提示：',
+      content: '现在登录吧！',
+      showCancel: true,
+      success(res) {
+        if (res.confirm) {
+          wx.switchTab({
+            url: '',
+            url: '/pages/my/my',
+          })
+        }
+      }
+    })
   },
 
   /**
@@ -43,6 +62,8 @@ Page({
     this.setData({
       imageList:this.data.imageList
     })
+
+
 
     //getUserById获取用户(店家)的信息
     var that = this;
@@ -105,8 +126,20 @@ Page({
     })
   },
   pid: function () {
+
+    if(app.user==null||app.user==''){
+      this.showModel();
+    }else{
+      wx.navigateTo({
+        url: '/pages/listPid/listPid',
+      })  
+    }
+
+  },
+  comments:function(){
+    wx.setStorageSync("foodsid", 563646230 );
     wx.navigateTo({
-      url: '/pages/listPid/listPid',
+      url: '/pages/listComment/listComment',
     })
   }
 

@@ -90,5 +90,12 @@ Page({
     //wx.navigateTo({
     //  url: '/pages/typeSearchResult/typeSearchResult',
     //})
-  }
+  },
+  getDetailFunction: function (e) {
+    let item = e.currentTarget.dataset.item;
+    wx.setStorageSync("item", item);
+    wx.navigateTo({
+      url: '/pages/listDetail/listDetail',
+    })
+  },
 })

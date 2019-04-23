@@ -36,9 +36,8 @@
           <text>(元)</text>
         </view>
         <view class='text2'>
-          <text class='text21'>起拍价:{{item.startprice}} (元)</text>
+          <text class='text21'>起拍价:{{item.startprice}}(元)</text>
         </view>
-
       </view>
 
       <view class='tran-info'>
@@ -86,19 +85,19 @@
             </view>
           </view>
           <view class='seller-info-right-bottom'>
-            <text>{{seller.autograph}}</text>
+            <text>{{seller.phone}}</text>
           </view>
         </view>
       </view>
       <view class='mid-other'>
         <view class='mid-other-left'>围观：{{item.foodsOthers.views}} 次</view>
         <view class='mid-other-mid'>竞拍：{{item.foodsOthers.pids}} 次</view>
-        <view class='mid-other-right'>竞拍：{{item.foodsOthers.comments}} 次</view>
+        <view class='mid-other-right'>评论：{{item.foodsOthers.comments}} 次</view>
       </view>
     </view>
   </scroll-view>
   <view class='bottom'>
-    <view class='kefu'>
+    <view class='kefu' bindtap='comments'>
       <view class='img'>
         <image src='/images/icons/xiaoxi.png'></image>
       </view>

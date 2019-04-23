@@ -2,7 +2,7 @@
   <view class='top' bindtap='changeInfoFunction'>
     <view class='left'>
       <view class='img'>
-        <image src='{{user.image1}}'></image>
+        <image src='{{user.photo}}'></image>
       </view>
     </view>
     <view class='mid'>
@@ -15,12 +15,12 @@
     </view>
     <view class='right'>
      <view class='xiangxi'>
-     <!-- <image src='/images/icons/getdetail.png'></image>-->
+      <image src='/images/icons/getdetail.png'></image>
      </view>
     </view>
   </view>
   <view class='bottom'>
-    <view class='item1'>
+    <view class='item1'  bindtap='myPid'>
       <view class='item-left'>
         <image src='/images/icons/paimai.png'></image>
       </view>
@@ -64,15 +64,14 @@
         <image src='/images/icons/getdetail.png'></image>
       </view>
     </view>
-    <view class='item1'>
+    <view class='item1' bindtap='loginout'>
       <view class='item-left'>
-        <image src='/images/icons/question.png'></image>
+        <image src='/images/icons/loginout.png'></image>
       </view>
       <view class='item1-mid'>
-        <text>常见问题</text> 
+        <text>退出登录</text> 
       </view>
-      <view class='item1-right'>
-        <image src='/images/icons/getdetail.png'></image>
+      <view class='item1-right' >
       </view>
     </view>
   </view>

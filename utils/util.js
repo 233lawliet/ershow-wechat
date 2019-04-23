@@ -15,6 +15,7 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+
 function wxPromisify(fn) {
   return function (obj = {}) {
     return new Promise((resolve, reject) => {
@@ -91,3 +92,5 @@ module.exports = {
   strMapToObj: strMapToObj,
   objToStrMap: objToStrMap,
 }
+
+

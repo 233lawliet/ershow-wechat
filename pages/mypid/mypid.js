@@ -12,7 +12,13 @@ Page({
 
 
   },
-  
+  showModel: function (info) {
+    wx.showModal({
+      title: '提示',
+      content: info,
+      showCancel: false
+    })
+  },
   
 
 
@@ -35,9 +41,14 @@ Page({
    */
   onShow: function () {
     //测试
-    this.data.user=wx.getStorageSync("user");
-    app.user=this.data.user;
-    this.leftF()
+    this.data.user=app.user;
+    if (app.user == null || app.user == '') {
+      this.showModel("请先登录！");
+    } else {
+      app.user = this.data.user;
+      this.leftF()
+    }
+    
   },
 
   /**
@@ -89,6 +100,7 @@ Page({
         buyerid: app.user.userid
       },
       success(res){
+
         that.data.items=res.data;
 
         //时间格式化
@@ -96,11 +108,24 @@ Page({
           //设置时间格式
           var date = new Date(that.data.items[i].pidtime);
           that.data.items[i].pidtime = (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ":" + date.getMinutes();
-        }
+          
+          //获取商品的详细信息
+          wx.request({
+            url: 'http://localhost:8080/getFoodsById?',
+            data: {
+              foodsId: that.data.items[i].foodsid
+            },
+            success(res) {
+              that.data.items[i].foods = res.data;
+              that.setData({
+                items: that.data.items
+              });
+            }
+          })
+          that.data.items[i].display = 'none';
+        }  
 
-        that.setData({
-          items:that.data.items
-        });
+        
       }
     })
   },
@@ -117,22 +142,83 @@ Page({
         sellerId: app.user.userid
       },
       success(res) {
+
         that.data.items = res.data;
+
+       
+
 
         //时间格式化
         for (let i = 0; i < that.data.items.length; i++) {
           //设置时间格式
-          var date = new Date(that.data.items[i].pidtime);
-         // that.data.items[i].pidtime = (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ":" + date.getMinutes();
+          
+          that.data.items[i].display='none';
+
+
+          
+
+
+          wx.request({
+            url: 'http://localhost:8080/getFoodsById?',
+            data: {
+              foodsId: that.data.items[i].foodsid
+            },
+            success(res) {
+              that.data.items[i].foods = res.data;
+
+
+              //foods里的起拍时间
+              var date = new Date(that.data.items[i].foods.starttime);
+              that.data.items[i].foods.starttime = (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ":" + date.getMinutes();
+
+              var date = new Date(that.data.items[i].foods.endTime);
+              that.data.items[i].foods.endTime = (date.getMonth() + 1) + '-' + date.getDate() + ' ' + date.getHours() + ":" + date.getMinutes();
+              that.setData({
+                items: that.data.items
+              });
+            }
+          })
+          
         }
 
-        console.log(that.data.items)
-        that.setData({
-          items: that.data.items
-        });
+       
       }
     })
   },
+  getMoreFunction: function (e) {
+    if (this.data.items[e.currentTarget.dataset.index].display == 'none') {
+      this.data.items[e.currentTarget.dataset.index].display = ''
+    } else {
+      this.data.items[e.currentTarget.dataset.index].display= 'none'
+    }
+    this.setData({
+      items: this.data.items
+    })
+  },
+
+
+  //获取商品的信息
+  getFoodsInfo:function(foodsid){
+    wx.request({
+      url: 'http://localhost:8080/getFoodsById?',
+      data:{
+        foodsId:foodsid
+      },
+      success(res){
+        return res.data;
+      }
+    })
+    
+  }, 
+  //查看物品详情
+  getDetailFunction: function (e) {
+    let item = e.currentTarget.dataset.item;
+    wx.setStorageSync("item", item);
+    wx.navigateTo({
+      url: '/pages/listDetail/listDetail',
+    })
+  },
+
   
 
 })

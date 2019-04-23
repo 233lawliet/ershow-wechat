@@ -1,7 +1,6 @@
 <view class="content">
   <scroll-view class='items' scroll-y>
     <block>
-
       <view class='item'>
         <view class='item-head' bindtap="getMoreFunction1">
           <view class='item-head-left'>
@@ -182,6 +181,7 @@
       </view>
     </block>
   </scroll-view>
+  
   <view class='bottom'>
     <view class="bottom-left">
       <button catchtap='cancelFunction'>取消</button>
@@ -190,4 +190,5 @@
       <button catchtap='changeFunction'>修改</button>
     </view>
   </view>
+
 </view>

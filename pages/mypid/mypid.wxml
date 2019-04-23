@@ -1,66 +1,167 @@
-<view class='centent' >
+<view class='centent'>
 
-    <view class='top'>
-      <view class="top-left {{!chooseFlag?'selectTypeColor':''}}"  bindtap='leftF'  >
-        <text>我的竞拍</text>
-      </view>
-      <view class="top-right {{chooseFlag?'selectTypeColor':''}}" bindtap='rightF'>
-        <text>我的拍卖</text>
-      </view>
+  <view class='top'>
+    <view class="top-left {{!chooseFlag?'selectTypeColor':''}}" bindtap='leftF'>
+      <text>我的竞拍</text>
     </view>
-
-    <view class='mid' wx:if="{{chooseFlag}}">
-      <view class='mid-name'>
-      <text>商品名称</text>
-      </view>
-      <view class='mid-time'>
-        <text>竞拍时间</text>
-      </view>
-      <view class='mid-price'>
-        <text>竞拍价格</text>
-      </view>
-      <view class='mid-status'>
-        <text>状态</text>
-      </view>
+    <view class="top-right {{chooseFlag?'selectTypeColor':''}}" bindtap='rightF'>
+      <text>我的拍卖</text>
     </view>
-    <view class='mid' wx:else="{{chooseFlag}}">
-      <view class='mid-name'>
-      <text>商品名称</text>
-      </view>
-      <view class='mid-time'>
-        <text>起拍价格</text>
-      </view>
-      <view class='mid-price'>
-        <text>最终价格</text>
-      </view>
-      <view class='mid-status'>
-        <text>竞拍者</text>
-      </view>
-    </view>
+  </view>
 
 
-    <view class='bottom'>
-     <scroll-view class='sp' scroll-y>
-        <!--使用block进行循环，不用view-->
-        <block wx:for="{{items}}" wx:key="{{item.foodsid}}">
-          <view class='item'>
-           <view class='item-name'>
-            <text>{{item.foodsName}}{{item.foodsname}}</text>
-           </view>
-           <view class='item-time'>
-            <text>{{item.pidtime}}{{item.sellerid}}</text>
-           </view>
-           <view class='item-price'>
-           <text>{{item.pidprice}}{{item.buyerprice}}</text>
-           </view>
-           <view class='item-status'>
-            <text>{{item.pidid}}{{item.buyername}}</text>
-           </view>
+
+  <scroll-view class='items' wx:if="{{chooseFlag}}" scroll-y>
+    <block wx:for="{{items}}" wx:key="{{item.pidid}}">
+      <view class='item'>
+        <view class="item-head {{item.foods.exist==true?'backcolor1':'backcolor2'}}" bindtap="getMoreFunction" data-index='{{index}}'>
+          <view class='item-head-left'>
+            <text>{{item.foodsname}}</text>
           </view>
-        </block>
-      </scroll-view>
-    </view>
+          <view class='item-head-mid'>
+            <text></text>
+          </view>
+          <view class='item-head-right'>
+            <view class='xiangxia'>
+              <image src='/images/icons/xiangxia.png'></image>
+            </view>
+          </view>
+        </view>
+        <view class='item-foot' style='display:{{item.display}}'>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>起拍价格</text>
+            </view>
+            <view class='item-right'>
+              <input class='password' type='text' value="{{item.foods.startprice+' 元'}}"></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>竞拍时间</text>
+            </view>
+            <view class='item-right'>
+              <input class='studentId' type='text' value='{{item.pidtime}}'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>竞拍价格</text>
+            </view>
+            <view class='item-right'>
+              <input class='password' type='text' value="{{item.pidprice+' 元'}}"></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>竞拍状态</text>
+            </view>
+            <view class='item-right'>
+              <input class='phone' type='text' value="{{item.foods.exist==true?'正在进行中':'已结束'}}"></input>
+            </view>
+          </view>
+
+          <view class='item-foot-item' wx:if="{{item.foods.exist}}"   bindtap='getDetailFunction' data-item='{{item.foods}}'>
+            <view class='item-botton'>
+              <text>前去围观</text>
+            </view>
+           
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </scroll-view>
 
 
+
+
+
+
+
+
+
+
+
+  <scroll-view class='items' wx:else scroll-y>
+    <block wx:for="{{items}}" wx:key="{{item.pidid}}">
+      <view class='item'>
+        <view class="item-head {{item.foods.exist==true?'backcolor1':'backcolor2'}}" bindtap="getMoreFunction" data-index='{{index}}'>
+          <view class='item-head-left'>
+            <text>{{item.foodsname}}</text>
+          </view>
+          <view class='item-head-mid'>
+            <text></text>
+          </view>
+          <view class='item-head-right'>
+            <view class='xiangxia'>
+              <image src='/images/icons/xiangxia.png'></image>
+            </view>
+          </view>
+        </view>
+        <view class='item-foot' style='display:{{item.display}}'>
+
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>起拍时间</text>
+            </view>
+            <view class='item-right'>
+              <input class='studentId' type='text' value='{{item.foods.starttime}}'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>起拍价格</text>
+            </view>
+            <view class='item-right'>
+              <input class='studentId' type='text' value="{{item.foods.startprice+' 元'}}"></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>竞拍者</text>
+            </view>
+            <view class='item-right'>
+              <input class='password' type='text' value='{{item.buyername}}'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>竞拍价格</text>
+            </view>
+            <view class='item-right'>
+              <input class='studentId' type='text' value="{{item.buyerprice+' 元'}}"></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>终止时间</text>
+            </view>
+            <view class='item-right'>
+              <input class='studentId' type='text' value='{{item.foods.endTime}}'></input>
+            </view>
+          </view>
+          <view class='item-foot-item'>
+            <view class='item-left'>
+              <text>竞拍状态</text>
+            </view>
+            <view class='item-right'>
+              <input class='phone' type='text' value="{{item.foods.exist==true?'正在进行中':'已结束'}}"></input>
+            </view>
+          </view>
+
+           <view class='item-foot-item' wx:if="{{item.foods.exist}}"   bindtap='getDetailFunction' data-item='{{item.foods}}'>
+            <view class='item-botton'>
+              <text>前去围观</text>
+            </view>
+           
+          </view>
+        </view>
+      </view>
+    </block>
+
+
+
+  </scroll-view>
 
 </view>

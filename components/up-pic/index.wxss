@@ -1,0 +1,89 @@
+@import "iconfont";
+
+image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 4%;
+}
+
+.icon-tupianshangchuan {
+  font-size: 73rpx;
+}
+
+.sunsin_picture_list {
+  width: 100%;
+  padding: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.sunsin_picture_list image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 4%;
+}
+
+.sunsin-add-image {
+  width: 150rpx;
+  height: 150rpx;
+  color: #ddd;
+  font-size: 144rpx;
+  line-height: 62%;
+  text-align: center;
+  margin: 2% 0 0 2%;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 10rpx;
+}
+
+.sunsin_picture_item {
+  margin: 20rpx;
+  margin-left: 0;
+  position: relative;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.sunsin_picture_item .del {
+  position: absolute;
+  top: 0;
+  right: -6rpx;
+  color: #fff;
+  border-radius: 4rpx;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  z-index: 2;
+  text-align: center;
+  background-color: #e54d42;
+}
+
+.sunsin_upload_progress {
+  font-size: 24rpx;
+  color: #fff;
+  width: 167rpx;
+  height: 160rpx;
+  text-align: center;
+  line-height: 160rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  border-radius: 8rpx;
+  background-color: #000;
+}
+
+.sunsin_picture_item image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.sunsin-yes-upload {
+  color: #fff;
+  border-radius: 0;
+  background-color: #00a0e9;
+}
