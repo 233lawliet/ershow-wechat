@@ -95,7 +95,7 @@ Page({
         });
         // 这个是使用微信接口保存文件服务器
          wx.uploadFile({
-              url: "http://localhost:8080/upload",
+              url: "http://maoerfei.cn/upload",
               filePath: filePath,
               name: 'file',
               success: function (res) {
@@ -103,7 +103,7 @@ Page({
                 that.data.user.photo = that.data.imgPath + res.data;
                 //更新数据库
                 wx.request({
-                  url: 'http://localhost:8080/updateUserInfo',
+                  url: 'http://maoerfei.cn/updateUserInfo',
                   data: {
                     studentid: app.user.studentid,
                     photo:that.data.user.photo

@@ -6,6 +6,25 @@
   
 }
 
+
+.top{
+
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1rpx solid #888;
+
+  background-color: rgb(49, 83, 57);
+  color: #fff;
+  font-size: 100%;
+  letter-spacing: 5rpx;
+  font-weight: bold;
+  border-radius: 10rpx;
+}
+
 .items {
   width: 100%;
   height:90%;
@@ -18,7 +37,7 @@
 }
 
 .item-head {
-  height: 110rpx;
+  height: 120rpx;
   width: 100%;
   background-color: #fff;
   border-bottom: 1rpx solid #ddd;
@@ -30,7 +49,7 @@
 }
 
 .item-head-left {
-  width: 35%;
+  width: 60%;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -48,15 +67,16 @@
 }
 
 .item-head-photo image{
-  width: 80%;
-  height: 70%;
+  width: 60%;
+  height: 80%;
 }
 
 .item-head-name{
   width: 60%;
   height: 100%;
-  font-size: 80%;
-  letter-spacing: 1rpx;
+  font-size: 100%;
+
+  letter-spacing: 2rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -64,7 +84,7 @@
 }
 
 .item-head-mid {
-  width: 58%;
+  width: 18%;
   height: 100%;
   padding-left: 2%;
   display: flex;
@@ -75,7 +95,7 @@
   color: #777;
 }
 .item-head-right {
-  width: 15%;
+  width: 20%;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -89,8 +109,8 @@
 
 
 .xiangxia {
-  width: 50rpx;
-  height: 50rpx;
+  width: 70%;
+  height: 70%;
 }
 
 .xiangxia image {

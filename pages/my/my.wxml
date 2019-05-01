@@ -35,8 +35,8 @@
       <view class='item-left'>
         <image src='/images/icons/guanzhu.png'></image>
       </view>
-      <view class='item-mid'>
-        <text>我的关注</text> 
+      <view class='item-mid'  bindtap='myCollect'>
+        <text>我的收藏</text> 
       </view>
       <view class='item-right'>
         <image src='/images/icons/getdetail.png'></image>
@@ -46,7 +46,7 @@
       <view class='item-left'>
         <image src='/images/icons/dingdan.png'></image>
       </view>
-      <view class='item-mid'>
+      <view class='item-mid' bindtap='myOrder'>
         <text>我的订单</text> 
       </view>
       <view class='item-right'>
@@ -55,10 +55,10 @@
     </view>
     <view class='item'>
       <view class='item-left'>
-        <image src='/images/icons/pingjia.png'></image>
+        <image src='/images/icons/connect.png'></image>
       </view>
-      <view class='item-mid'>
-        <text>我的评价</text> 
+      <view class='item-mid' bindtap='connectMe'>
+        <text>联系我们</text> 
       </view>
       <view class='item-right'>
         <image src='/images/icons/getdetail.png'></image>

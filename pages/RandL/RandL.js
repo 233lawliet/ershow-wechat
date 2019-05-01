@@ -29,9 +29,7 @@ Page({
       content: '现在去完善个人信息吧。',
       showCancel: false,
       success(res){
-        console.log(res)
         if(res.confirm){
-          console.log("调用了");
           wx.navigateTo({
             url: '/pages/myinfo/myinfo',
           })
@@ -109,7 +107,7 @@ Page({
   login:function(){
     var that=this;      
     wx.request({
-      url: 'http://localhost:8080/checkLogin',
+      url: 'http://maoerfei.cn/checkLogin',
       data:{
         studentid:that.data.account,
         psword:that.data.password
@@ -135,7 +133,7 @@ Page({
     }else {
       var that = this;
       wx.request({
-        url: 'http://localhost:8080/checkAccount',
+        url: 'http://maoerfei.cn/checkAccount',
         data: {
           studentid: that.data.account
         },
@@ -143,7 +141,7 @@ Page({
           //数据插入
           if(res.data==0){
             wx.request({
-              url: 'http://localhost:8080/insertUser',
+              url: 'http://maoerfei.cn/insertUser',
               data: {
                 studentid: that.data.account,
                 psword: that.data.password
@@ -151,7 +149,7 @@ Page({
               success(res) {
                 //用户信息获取
                 wx.request({
-                  url: 'http://localhost:8080/checkLogin',
+                  url: 'http://maoerfei.cn/checkLogin',
                   data: {
                     studentid: that.data.account,
                     psword: that.data.password

@@ -28,7 +28,7 @@ Page({
   },
 
  
-  stustudentidF: function (e) { this.data.user.stustudentid = e.detail.value;},
+  studentidF: function (e) { this.data.user.studentid = e.detail.value;},
   passwordF: function (e) { this.data.user.psword = e.detail.value;},
   phoneF: function (e) { this.data.user.phone = e.detail.value;},
   emailF: function (e) { this.data.user.email= e.detail.value;},
@@ -160,8 +160,9 @@ Page({
       this.data.user.age = 0;
     }
     wx.request({
-      url: 'http://localhost:8080/updateUserInfo',
+      url: 'http://maoerfei.cn/updateUserInfo',
       data:{
+        userid: this.data.user.userid,
         studentid: this.data.user.studentid,
         psword:  this.data.user.psword,
         phone: this.data.user.phone,

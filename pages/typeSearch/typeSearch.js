@@ -76,12 +76,21 @@ Page({
   getRearchFunction: function () {
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/getFoodsByName',
+      url: 'http://maoerfei.cn/getFoodsByName',
       data: {
         name: that.data.searchData
       },
       success(res) {
-        that.data.items = res.data;
+
+
+        that.data.items = []
+        //把未过期的数据添加进list
+        for (let i = 0; i < res.data.length; i++) {
+          if (res.data[i].exist == true) {
+            that.data.items.push(res.data[i])
+          }
+        }
+       
         that.setData({
           items: that.data.items
         })

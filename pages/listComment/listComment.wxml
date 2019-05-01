@@ -4,7 +4,7 @@
 
 
       <view class='item'  wx:for="{{allItems}}" wx:key="{{item.item.commentid}}">
-        <view class='item-head' data-index='{{index}}' bindtap="getMoreFunction1">
+        <view class='item-head' data-index='{{index}}' >
           <view class='item-head-left'>
             <view class='item-head-photo'>
               <image src='{{item.item.photo}}'></image>

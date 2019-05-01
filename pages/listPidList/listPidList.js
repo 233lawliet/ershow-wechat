@@ -30,7 +30,7 @@ Page({
     var that=this;
     var foodsid = wx.getStorageSync("item").foodsid;
     wx.request({
-        url: 'http://localhost:8080/getPids',
+        url: 'http://maoerfei.cn/getPids',
         data:{
           foodsId: foodsid
         },

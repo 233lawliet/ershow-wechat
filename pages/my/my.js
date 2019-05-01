@@ -58,6 +58,13 @@ Page({
       showCancel: false
     })
   },
+  connectMeModel: function () {
+    wx.showModal({
+      title: '联系作者  ',
+      content: "qq:1729930160",
+      showCancel: false
+    })
+  },
   /**
    * Lifecycle function--Called when page hide
    */
@@ -112,13 +119,39 @@ Page({
       })
     }
   },
-  loginout:function(){
-    app.user="";
+  
+  //我的收藏
+  myCollect:function(){
+    if (app.user == null || app.user == '') {
+      this.showModel("请先登录！");
+    } else {
+      wx.navigateTo({
+        url: '/pages/mycollect/mycollect',
+      })
+    }
+  },
+  myOrder: function() {
+    if (app.user == null || app.user == '') {
+      this.showModel("请先登录！");
+    } else {
+     wx.switchTab({
+       url: '/pages/mypid/mypid',
+     })
+    }
+  },
+  connectMe:function(){
+   this.connectMeModel()
+  },
+
+
+  //退出登录
+  loginout: function () {
+    app.user = "";
     wx.setStorageSync("user", null);
-    
-    this.data.user=this.data.userTemp
+
+    this.data.user = this.data.userTemp
     this.setData({
-      user:this.data.userTemp
+      user: this.data.userTemp
     })
-  }
+  },
 })

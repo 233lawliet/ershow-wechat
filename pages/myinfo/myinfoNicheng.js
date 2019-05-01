@@ -84,7 +84,7 @@ Page({
   okFunction:function(){
     var that=this
     wx.request({
-      url: 'http://localhost:8080/updateUserInfo',
+      url: 'http://maoerfei.cn/updateUserInfo',
       data:{
         studentid: app.user.studentid,
         nickname: that.data.nicheng

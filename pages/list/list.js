@@ -10,14 +10,13 @@ Page({
 
     /*轮播数据*/
     imgUrls: [
-      'http://www.pptbz.com/pptpic/UploadFiles_6909/201203/2012031220134655.jpg',
-      'http://t9.baidu.com/it/u=265726718,565835175&fm=191&app=48&wm=1,17,90,45,20,7&wmo=0,0&n=0&g=0n&f=JPEG?sec=1853310920&t=367cb9090d602fbbf5ae677daacd3b10',
+      'http://maoerfei.cn:8000/ershow/index2.png',
       'http://i0.hdslb.com/bfs/archive/ffe9735cdb517513b7de05d95767eef31abe3da9.jpg'
     ],
     indicatorDots: true,
     autoplay: true,
-    interval: 2000,
-    duration: 500,
+    interval: 4000,
+    duration: 1000,
 
 
     items: [],
@@ -48,16 +47,24 @@ Page({
   onShow: function () {
     var that = this
     wx.request({
-      url: 'http://localhost:8080/allFoods',
+      url: 'http://maoerfei.cn/allFoods',
       data: {},
       header: {
         'content-type': 'application/json' // 默认值
       },
       success(res) {
-        that.data.items = res.data;
-        wx.setStorageSync("items", that.data.items);
 
+        that.data.items=[]
+        //把未过期的数据添加进list
+        for (let i = 0; i < res.data.length; i++) {
+          if (res.data[i].exist ==true){
+            that.data.items.push(res.data[i])
+          }
+        }
+
+        wx.setStorageSync("items", that.data.items);
         that.setData({ items: that.data.items });
+
       }
     })
 
@@ -99,7 +106,7 @@ Page({
   },
   addViews:function(foodsid){
     wx.request({
-      url: 'http://localhost:8080/addViews',
+      url: 'http://maoerfei.cn/addViews',
       data:{
         foodsid:foodsid
       }

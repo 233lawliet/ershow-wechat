@@ -11,8 +11,6 @@ Page({
     ifDian: false,
     ifLou: false,
 
-
-
     user: {}, 
     //商品
     foodsid:null,
@@ -54,7 +52,7 @@ Page({
   getAllItems(){
     var that = this;
     wx.request({
-      url: 'http://localhost:8080/getComments',
+      url: 'http://maoerfei.cn/getComments',
       data:{
         foodsid: that.data.foodsid,
       },
@@ -198,7 +196,7 @@ Page({
   getAllData:function(){
     var that=this
     wx.request({
-      url: 'http://localhost:8080/getComments',
+      url: 'http://maoerfei.cn/getComments',
       data:{
         foodsid:that.data.foodsid,
       },
@@ -216,7 +214,7 @@ Page({
   addComments: function (foodsid) {
     var that = this
     wx.request({
-      url: 'http://localhost:8080/addComments',
+      url: 'http://maoerfei.cn/addComments',
       data: {
         foodsid: that.data.foodsid
       }
@@ -232,10 +230,10 @@ Page({
   confirm:function(e){
     var that=this;
     wx.request({
-      url: 'http://localhost:8080/insertComments',
+      url: 'http://maoerfei.cn/insertComments',
       data:{
         foodsid:that.data.foodsid,
-        userid: that.data.user.studentid,
+        userid: that.data.user.userid,
         nickname:that.data.user.nickname,
         photo:that.data.user.photo,
         commentobject:that.data.commentobject,

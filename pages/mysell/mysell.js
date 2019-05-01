@@ -62,7 +62,7 @@ Page({
   onShow: function () {
     var that=this
     wx.request({
-      url: 'http://localhost:8080/getTypes',
+      url: 'http://maoerfei.cn/getTypes',
       data:{},
       success(res){
          
@@ -156,7 +156,7 @@ Page({
   pid:function(){
     var that=this
     wx.request({
-      url: 'http://localhost:8080/insertFoods',
+      url: 'http://maoerfei.cn/insertFoods',
       data:{
         foodsname:that.data.name,
         typeid:that.data.type,
@@ -170,6 +170,7 @@ Page({
         place:that.data.place,
 
         userid: that.data.user.userid,
+        nickname: that.data.user.nickname,
 
       },
       success(res){
@@ -195,7 +196,7 @@ Page({
         });
         // 这个是使用微信接口保存文件服务器
         wx.uploadFile({
-          url: "http://localhost:8080/upload",
+          url: "http://maoerfei.cn/upload",
           filePath: filePath,
           name: 'file',
           success: function (res) {
@@ -231,7 +232,7 @@ Page({
         });
         // 这个是使用微信接口保存文件服务器
         wx.uploadFile({
-          url: "http://localhost:8080/upload",
+          url: "http://maoerfei.cn/upload",
           filePath: filePath,
           name: 'file',
           success: function (res) {
@@ -267,7 +268,7 @@ Page({
         });
         // 这个是使用微信接口保存文件服务器
         wx.uploadFile({
-          url: "http://localhost:8080/upload",
+          url: "http://maoerfei.cn/upload",
           filePath: filePath,
           name: 'file',
           success: function (res) {

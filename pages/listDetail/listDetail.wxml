@@ -12,7 +12,7 @@
         <view class='clock'>
           <image src='/images/icons/clock.png'></image>
         </view>
-        <text>该活动预计于12结束</text>
+        <text>该活动预计于{{item.endTime}}结束</text>
       </view>
     </view>
     <view class='mid'>
@@ -105,9 +105,9 @@
         <text>评论</text>
       </view>
     </view>
-    <view class='shoucang'>
+    <view class='shoucang' bindtap='clickCollect'>
       <view class='img'>
-        <image src='/images/icons/shoucang.png'></image>
+        <image src="{{shoucangUrl}}"></image>
       </view>
       <view class='name'>
         <text>收藏</text>

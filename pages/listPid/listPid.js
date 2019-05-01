@@ -90,11 +90,10 @@ Page({
   pid:function(e){
 
     var that = this;
-    console.log(that.data.price);
     //输入的价格判定
     if ((that.data.curPrice == null && that.data.price > that.data.item.startprice)|| (that.data.curPrice != null&&that.data.price >that.data.item.curPrice)){
       wx.request({
-        url: 'http://localhost:8080//pid',
+        url: 'http://maoerfei.cn//pid',
         data: {
           foodsid: that.data.item.foodsid,
           foodsname: that.data.item.foodsname,
@@ -126,12 +125,10 @@ Page({
     this.modal.showModal();
   },
   _cancelEvent() {
-    console.log('你点击了取消');
     this.modal.hideModal();
   },
   //确认事件
   _confirmEvent() {
-    console.log('你点击了确定');
     this.modal.hideModal();
   }
 })

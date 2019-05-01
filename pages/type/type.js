@@ -27,7 +27,7 @@ Page({
     var that = this;
     //同步请求
     wxrequest({
-      url: 'http://localhost:8080/getTypes',
+      url: 'http://maoerfei.cn/getTypes',
       data: {
       },
       header: {

@@ -12,11 +12,20 @@ Page({
 
 
   },
+  
+
   showModel: function (info) {
     wx.showModal({
-      title: '提示',
+      title: '提示：',
       content: info,
-      showCancel: false
+      showCancel: false,
+      success(res) {
+        if (res.confirm) {
+          wx.switchTab({
+            url: '/pages/my/my',
+          })
+        }
+      }
     })
   },
   
@@ -95,7 +104,7 @@ Page({
     //获取数据
     var that=this
     wx.request({
-      url: 'http://localhost:8080/getPidsByBuyer',
+      url: 'http://maoerfei.cn/getPidsByBuyer',
       data:{
         buyerid: app.user.userid
       },
@@ -111,7 +120,7 @@ Page({
           
           //获取商品的详细信息
           wx.request({
-            url: 'http://localhost:8080/getFoodsById?',
+            url: 'http://maoerfei.cn/getFoodsById?',
             data: {
               foodsId: that.data.items[i].foodsid
             },
@@ -137,7 +146,7 @@ Page({
     //获取数据
     var that = this
     wx.request({
-      url: 'http://localhost:8080/getFoodsOrderBySellerId',
+      url: 'http://maoerfei.cn/getFoodsOrderBySellerId',
       data: {
         sellerId: app.user.userid
       },
@@ -145,21 +154,19 @@ Page({
 
         that.data.items = res.data;
 
-       
-
-
+        if (that.data.items.length==0){
+          that.setData({
+            items: that.data.items
+          });
+          return ;
+        }
         //时间格式化
         for (let i = 0; i < that.data.items.length; i++) {
           //设置时间格式
-          
           that.data.items[i].display='none';
 
-
-          
-
-
           wx.request({
-            url: 'http://localhost:8080/getFoodsById?',
+            url: 'http://maoerfei.cn/getFoodsById?',
             data: {
               foodsId: that.data.items[i].foodsid
             },
@@ -200,7 +207,7 @@ Page({
   //获取商品的信息
   getFoodsInfo:function(foodsid){
     wx.request({
-      url: 'http://localhost:8080/getFoodsById?',
+      url: 'http://maoerfei.cn/getFoodsById?',
       data:{
         foodsId:foodsid
       },

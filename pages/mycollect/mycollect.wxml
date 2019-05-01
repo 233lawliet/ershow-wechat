@@ -1,0 +1,41 @@
+<view class="content">
+
+  <view class='top'>
+    <text>我的收藏</text>
+
+  </view>
+
+
+  <scroll-view class='items' scroll-y>
+    <block>
+
+
+      <view wx:for="{{items}}" wx:key="{{item.collectid}}" >
+        <view class='item-head' >
+          <view class='item-head-left'  bindtap='goDetail' data-foodsid='{{item.foodsid}}'>
+            <view class='item-head-photo'>
+              <image src='{{item.image}}'></image>
+            </view>
+            <view class='item-head-name'>
+              <text>{{item.foodsname}}</text>
+            </view>
+          </view>
+          <view class='item-head-mid'  bindtap='goDetail' data-foodsid='{{item.foodsid}}'>
+            <view class='comment'>
+              <text></text>
+            </view>
+          </view>
+          <view class='item-head-right' bindtap='deleteCollect' data-foodsid='{{item.foodsid}}'>
+            <view class='xiangxia'>
+              <image src='/images/icons/shoucang2.png'></image>
+            </view>
+          </view>
+        </view>
+
+      </view>
+
+    </block>
+  </scroll-view>
+
+
+</view>
