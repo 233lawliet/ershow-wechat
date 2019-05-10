@@ -19,7 +19,7 @@
           <text>当前竞价：</text>
         </view>
         <view class='right-bottom-right'>
-          <text>￥{{item.curPrice}}</text>
+          <text>￥{{item.curPrice==null?item.startprice:item.curPrice}}元</text>
         </view>
       </view>
     </view>

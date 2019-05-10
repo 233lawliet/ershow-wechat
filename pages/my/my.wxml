@@ -46,8 +46,9 @@
       <view class='item-left'>
         <image src='/images/icons/dingdan.png'></image>
       </view>
+      <!--bindtap='myOrder'-->
       <view class='item-mid' bindtap='myOrder'>
-        <text>我的订单</text> 
+        <text>我的记录</text> 
       </view>
       <view class='item-right'>
         <image src='/images/icons/getdetail.png'></image>

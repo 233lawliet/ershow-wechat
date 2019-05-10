@@ -80,7 +80,7 @@
             <text>起拍价格</text>
           </view>
           <view class='item-right'>
-            <input class='studentId' type='text' bindinput='priceF'></input>
+            <input class='studentId' type='text' placeholder='单位:元' bindinput='priceF'></input>
           </view>
         </view>
 
@@ -89,7 +89,7 @@
             <text>竞拍时长</text>
           </view>
           <view class='item-right'>
-            <input class='phone' type='text' bindinput='hoursF'></input>
+            <input class='phone' type='text' placeholder='单位:小时' bindinput='hoursF'></input>
           </view>
         </view>
         <view class='item-foot-item'>

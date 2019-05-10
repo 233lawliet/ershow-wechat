@@ -1,4 +1,4 @@
-<view class='centent' style="background-image: url('/images/imgs/pic.png')">
+<view class='centent' style="background-image: url('http://maoerfei.cn:8000/ershow/pic.png')">
   <view class='main' style="opacity:0.92"   >
 
     <view class='top'>

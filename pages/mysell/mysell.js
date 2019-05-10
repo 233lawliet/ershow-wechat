@@ -9,7 +9,7 @@ Page({
     user:{},
     
     /*下拉显示类别*/
-    array:[],
+    array:[],     
 
     name:null,
     type:null,
@@ -67,11 +67,6 @@ Page({
       success(res){
          
         that.data.array=res.data;
-        for (let i = 0; i <= res.data.length;i++){
-          //svar temp=[]
-          //that.data.array.push(temp)
-          
-        }
         that.setData({
           array:that.data.array
         })

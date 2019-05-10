@@ -86,6 +86,7 @@ Page({
     wx.request({
       url: 'http://maoerfei.cn/updateUserInfo',
       data:{
+        userid: app.user.userid,
         studentid: app.user.studentid,
         nickname: that.data.nicheng
       },

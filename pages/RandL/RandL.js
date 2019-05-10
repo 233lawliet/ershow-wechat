@@ -117,8 +117,6 @@ Page({
           that.showModel("账号或密码错误！");
         }else{
           app.user = res.data,
-
-
           wx.switchTab({
             url: '/pages/my/my',
           });

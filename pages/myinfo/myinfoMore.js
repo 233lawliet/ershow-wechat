@@ -22,7 +22,7 @@ Page({
       { 
         name:"1",
         value:"男",
-        checked:false,
+        checked:false
       },
     ]
   },

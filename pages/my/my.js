@@ -134,9 +134,20 @@ Page({
     if (app.user == null || app.user == '') {
       this.showModel("请先登录！");
     } else {
-     wx.switchTab({
-       url: '/pages/mypid/mypid',
-     })
+      wx.switchTab({
+        url: '/pages/mypid/mypid',
+        success: function (e) {
+          var page = getCurrentPages().pop();
+          if (page == undefined || page == null) return;
+          page.onShow();
+        },
+        fail: function (e) {
+          var page = getCurrentPages().pop();
+          if (page == undefined || page == null) return;
+          page.onShow();
+        }
+      })
+
     }
   },
   connectMe:function(){

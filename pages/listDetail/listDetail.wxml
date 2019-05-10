@@ -30,7 +30,7 @@
           <text class='text12'>当前价</text>
         </view>
         <view class='price1'>
-          <text>{{item.curPrice}}</text>
+          <text>{{item.curPrice==null?item.startprice:item.curPrice}}</text>
         </view>
         <view class='yuan1'>
           <text>(元)</text>

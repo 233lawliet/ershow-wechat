@@ -1,5 +1,6 @@
 {
   "pages": [
+    
     "pages/list/list",
     "pages/listDetail/listDetail",
     "pages/listComment/listComment",
@@ -7,14 +8,17 @@
     "pages/listPidList/listPidList",
     "pages/type/type",
     "pages/typeSearch/typeSearch",
-    "pages/mypid/mypid",
+    
+
     "pages/my/my",
+    "pages/mypid/mypid",
     "pages/mysell/mysell",
     "pages/mycollect/mycollect",
     "pages/myinfo/myinfo",
     "pages/myinfo/myinfoMore",
     "pages/myinfo/myinfoNicheng",
-    "pages/myinfo/myinfoQianming"
+    "pages/myinfo/myinfoQianming",
+    "pages/RandL/RandL"
   ],
   "window": {
     "backgroundTextStyle": "light",

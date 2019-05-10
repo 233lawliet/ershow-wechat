@@ -88,7 +88,7 @@ Page({
         var filePath = res.tempFilePaths[0];
         //将刚才选的照片/拍的 放到下面view视图中
         that.data.user.photo = filePath;
-        console.log(filePath);
+        
         that.setData({
           user: that.data.user, //把照片路径存到变量中，
           touxiangHidden: false //让展示照片的view显示
@@ -105,11 +105,12 @@ Page({
                 wx.request({
                   url: 'http://maoerfei.cn/updateUserInfo',
                   data: {
+                    userid: app.user.userid,
                     studentid: app.user.studentid,
                     photo:that.data.user.photo
                   },
                   success(res) {
-                  
+                    console.log(app.user.userid)
                   }
                 })
               }

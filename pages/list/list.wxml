@@ -22,7 +22,7 @@
             <text>{{item.foodsname}}</text>
           </view>
           <view class='oldPrice'>起拍价:￥ {{item.startprice}}</view>
-          <view class='curPrice'>当前价:￥ {{item.curPrice}}</view>
+          <view class='curPrice'>{{item.curPrice==null?'暂未竞拍':'当前价:￥ '+item.curPrice}}</view>
         </view>
         <view class='item-right'>
           <view class='item-right-top'>
